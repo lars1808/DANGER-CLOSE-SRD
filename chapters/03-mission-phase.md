@@ -2,9 +2,14 @@
 
 Upon landing at an LZ the [[Squad]] will start their advance towards their [[Objective]]. When moving between [[Sector|Sectors]], a Squad will be in one of 4 states.
 
+- **Advance** - Moving forward to a new Sector. Leads to an **Engagement** or **Catch Breath**.
+- **Engagement** - In a firefight to clear a Sector. Leads to **Retreat** or **Catch Breath**.
+- **Retreat** - Falling back to a previous Sector. Leads to an **Engagement** or **Catch Breath**.
+- **Catch Breath** - Reload, recover. Leads to a new **Advance**.
+
 ## Advance!
 
-The default state — pushing forwards towards the Objective. This can be narrated as encountering and overcoming minor resistance; the Squad moves from cover to cover, returning fire, eliminating scattered foes.
+The default state - pushing forwards towards the Objective. This can be narrated as encountering and overcoming minor resistance; the Squad moves from cover to cover, returning fire, eliminating scattered foes.
 
 When arriving in a Sector, its contents determine the next step:
 
@@ -20,43 +25,43 @@ The **[[Advance Roll]]** determines the starting position of the Squad in an [[E
 
 Determine relevant modifiers:
 
-- **Weather/Environmental Conditions.** −1 if bad, −2 if terrible. If the Squad is clearly advantaged by the environment, gain +1. If clearly disadvantaged, −1.
-- **Fatigue.** −1 for each 3 Advance Rolls previously made during this mission.
-- **Threat Level.** Negative modifier equal to TL.
+- **Fatigue**. -1 for each 3 Advance Rolls previously made during this mission.
+- **Weather/Environmental Conditions**. -1 if bad, -2 if terrible. If the Squad is clearly advantaged by the environment, gain +1. If clearly disadvantaged, -1.
+- **Threat Level**. Negative modifier equal to TL.
+- **Assault**. Before rolling the Advance Roll, you may spend any amount of [[Ammo]] from your Troopers to add as a positive modifier. You cannot [[Infiltrate|Infiltration]] on the same Advance.
+- **Stealth**. If the enemy is unaware of any hostile presence in this mission area, gain +3 on the roll. Using Assault or rolling SPOTTED or worse forfeits this bonus for the rest of the mission.
+
+### Momentum & Defensive Positions
 
 Then, roll {roll:2d6|Advance} and apply the modifiers.
 
 | 2d6      | Result       | Momentum           | Defensive Positions |
 | -------- | ------------ | ------------------ | ------------------- |
-| ≤ 3      | AMBUSHED     | LOSING GROUND      | Flanked             |
-| 4–7      | SPOTTED      | CONTESTED          | In Cover            |
-| 8–10     | SURPRISE     | GAINING GROUND     | Fortified           |
-| 11+      | **Overwhelm** | —                 | —                   |
+| ≤ 3      | AMBUSHED     | LOSING GROUND      | [[Flanked]]         |
+| 4–7      | SPOTTED      | CONTESTED          | [[In Cover]]        |
+| 8–10     | SURPRISE     | GAINING GROUND     | [[Fortified]]       |
+| 11+      | **Overwhelm** | -                 | -                   |
 
 **Overwhelm.** Due to a mixture of luck, guts, training and teamwork, the Squad manages to absolutely overwhelm the enemy force. No resources are lost, and the enemy is routed. *Catch Breath*.
 
-Next, assign starting positions and start the Engagement — or narrate how the Squad manages to rout the enemy with overwhelming force. Note that the Cover/Space of the Sector might still limit how many Troopers can be Fortified/Flanking.
+### Offensive Position & Infiltration
 
-If the Squad wins the Engagement, they have a chance to *Catch Breath* before choosing their next action. If the Squad is forced to fall back (or chooses to), they *Retreat!*
+Each Trooper rolls an individual [[Mobility Check]]. If everyone passes their Mobility Check: The Squad bypasses the Sector entirely. No Engagement, no resources spent. Proceed to the next Sector. Narrate how you pass like ghost.
 
-**Offensive Position** is determined by individual [[Mobility Check|Mobility Checks]]. Note that being wounded imposes an additional −1. This means that the Squad shares their Defensive Positions, but Offensive Positions can vary.
+If not everyone passes, first assign individual [[Offensive Position|Offensive Positions]]. Note that the [[Cover]]/[[Space ]]of the Sector might still limit how many Troopers can be [[Fortified]]/[[Flanking]].
 
-| Result    | Mobility Check Success | Mobility Check Failure |
-| --------- | ---------------------- | ---------------------- |
-| AMBUSHED  | Engaged                | Limited                |
-| SPOTTED   | Flanking               | Engaged                |
-| SURPRISE  | Flanking               | Engaged                |
+| Result   | Mobility Check Success | Mobility Check Failure |
+| -------- | ---------------------- | ---------------------- |
+| AMBUSHED | [[Engaged]]            | [[Limited]]            |
+| SPOTTED  | [[Flanking]]           | [[Engaged]]            |
+| SURPRISE | [[Flanking]]           | [[Engaged]]            |
 
-## Infiltration
+Then, if Stealth is still active, count the number of successful Mobility Checks among your Troopers. For each 2 Successes, pick one of the  following: 
 
-When entering a Sector with enemies, instead of engaging, the Squad may attempt to slip past undetected.
-
-If more than half of all Troopers succeed their [[Mobility Check]], you may choose to hold fire and attempt infiltration instead of engaging.
-
-If you choose to Infiltrate, everyone makes a *second* Mobility Check.
-
-- **Everyone succeeds their Mobility Check:** The Squad bypasses the Sector entirely. No Engagement, no resources spent. Proceed to the next Sector.
-- **Anyone fails their Mobility Check:** Detected. The whole Squad is put in a bad position: LOSING GROUND, Flanked, Limited.
+- **Cut Comms**. [[Stealth]] is preserved throughout and after this  Engagement.
+- **Target Commanders**. No [[Enemy Tactics]] this Engagement. 
+- **Trap**. The first [[Hard Target]] this engagement takes 2 Hits when it  appears. 
+- **Exit Route**. [[Disengage]] is automatic, no Injuries.
 
 ## Retreat!
 
@@ -76,7 +81,7 @@ When the enemy pursues, they must split their forces:
 
 If the Squad chooses to draw them out, reduce the pursuing TL by 1 (to a minimum of TL 1). *Example:* from a TL 3 force, the enemy pursues with TL 1 and leaves behind TL 2.
 
-Drawing an enemy out into a previous Sector with a high Cover Rating can be quite advantageous — but fleeing from an enemy into a Sector with a low Cover Rating is risky, if the enemy decides to pursue.
+Drawing an enemy out into a previous Sector with a high Cover Rating can be quite advantageous - but fleeing from an enemy into a Sector with a low Cover Rating is risky, if the enemy decides to pursue.
 
 ## Catch Breath
 
