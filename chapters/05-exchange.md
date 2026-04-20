@@ -113,7 +113,7 @@ Gain +1 Momentum. -1 DEF for the most at-risk Trooper (most injured in the worst
 
 ### Success
 
-Gain +1 Momentum. If you roll a number of 6s ≥ [[Threat Level]] + 1, gain 1 additional Momentum (so never more than +2 Momentum per Exchange). If this Momentum gain pushes Momentum to VICTORY, the Engagement is won.
+Gain +1 Momentum. If you roll a number of 6s ≥ [[Threat Level]] + 1, gain 1 additional Momentum (so never more than +2 Momentum per Exchange). If this Momentum gain pushes Momentum to VICTORY, the Engagement is won. If you obtain a Success you can also opt to **Hold Position** instead, as that might be beneficial during defense or extraction missions. 
 
 If after the Offense Roll, Momentum is not at DEFEAT or VICTORY, the fight continues. The other effects of Momentum gain/loss are resolved after the Defense Roll.
 
@@ -172,7 +172,7 @@ The severity of Injury suffered depends on the Threat Level:
 
 ### Suppressed
 
-A Trooper that fails their Defense Roll can choose to become **Suppressed**. They avoid Injury entirely, but cannot Fire (or use similar offensive Gear) in the next Exchange. Choose this before the severity of Injury is rolled for.
+A Trooper that fails their Defense Roll can choose to become **Suppressed**. They avoid Injury entirely, but cannot Fire (or use similar offensive Gear) or provide Covering Fire in the next Exchange. Choose this before the severity of Injury is rolled for.
 
 - A Suppressed Trooper remains Suppressed until they pass a [[Defense Roll]] or become [[Fortified]].
 - Being or becoming Fortified clears Suppressed, but only after the Exchange's Offense Roll. The Trooper still loses their ability to Fire for one Exchange.
@@ -185,8 +185,8 @@ At the end of the Exchange, see if the squad lost or gained Momentum.
 ### Momentum Gain
 
 - Gain +1 ATK on the next Offensive Roll.
-- Any Troopers that were **Flanking** can either choose to become Engaged (as the enemy falls back/there's no flanked enemies left to attack) or to remain Flanking (pursuing the enemy), but with -1 DEF the next Exchange.
-- Any Troopers that were **Fortified** can either choose to become Limited (safe, but with no immediate enemies to shoot) or Engaged + In Cover (moving up to press the advantage).
+- Any Troopers that were [[Flanking]] can either choose to become [[Engaged]] (as the enemy falls back/there's no flanked enemies left to attack) or to remain [[Flanking]] (pursuing the enemy), but with -1 DEF the next Exchange.
+- Any Troopers that were [[Fortified]] can either choose to become [[Limited]] (safe, but with no immediate enemies to shoot) or [[Engaged]] + [[In Cover]] (moving up to press the advantage).
 
 ### Momentum Loss
 

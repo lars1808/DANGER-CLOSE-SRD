@@ -28,7 +28,7 @@ Determine relevant modifiers:
 - **Fatigue**. -1 for each 3 Advance Rolls previously made during this mission.
 - **Weather/Environmental Conditions**. -1 if bad, -2 if terrible. If the Squad is clearly advantaged by the environment, gain +1. If clearly disadvantaged, -1.
 - **Threat Level**. Negative modifier equal to TL.
-- **Assault**. Before rolling the Advance Roll, you may spend any amount of [[Ammo]] from your Troopers to add as a positive modifier. You cannot [[Infiltrate|Infiltration]] on the same Advance.
+- **Assault**. Before rolling the Advance Roll, you may spend [[Ammo]] to enhance the roll, at a rate of 2 Ammo for a +1. You cannot [[Infiltration|Infiltrate]]on the same Advance.
 - **Stealth**. If the enemy is unaware of any hostile presence in this mission area, gain +3 on the roll. Using Assault or rolling SPOTTED or worse forfeits this bonus for the rest of the mission.
 
 ### Momentum & Defensive Positions
