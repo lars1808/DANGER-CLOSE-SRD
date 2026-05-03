@@ -83,6 +83,8 @@ If the Squad chooses to draw them out, reduce the pursuing TL by 1 (to a minimum
 
 Drawing an enemy out into a previous Sector with a high Cover Rating can be quite advantageous - but fleeing from an enemy into a Sector with a low Cover Rating is risky, if the enemy decides to pursue.
 
+The last Sector visited by the Squad is always safe to fall back to. Beyond that, there’s a risk of running into additional forces if falling back again. If caught between new forces and pursuing forces, sum up the TL of the Sector entered and any pursuing forces (to a maximum of 4), and set the Pressure to its maximum possible value right away.
+
 ## Catch Breath
 
 If a Squad clears a Sector (or finds it empty), they have a chance to catch their breath and regroup. This allows a Trooper to use Medical Gear to bandage the wounded, or Ammo to be redistributed from a Supply Backpack, as well as narrative/roleplaying moments.
