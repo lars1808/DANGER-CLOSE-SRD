@@ -183,7 +183,7 @@ Allows the user to patch up [[Wounded]] Troopers back to OK when out of combat.
 
 *Bulky backpack-sized transmitter and receiver, allowing one to reach command - even over electrostatic disruptions.*
 
-Call in an artillery strike on the current Sector, once per Mission. Hits in {roll:1d2|Strike ETA} Exchanges from now. When it hits, gain +2 Momentum instantly, with all ground-based Hard Targets being destroyed. All Troopers must make a [[Mobility Check]], gaining {roll:1d3|Injury} Injury on failure.
+Required to call in exfil and call in **Support**. When used in combat, requires Interact[1].
 
 ### Supply Backpack
 
@@ -200,3 +200,88 @@ Holds 6 extra [[Ammo]], which can be redistributed outside of combat.
 *Gear for special traversal or dangerous environments, such as climbing gear or hazmat suits. Define what the gear is upon pickup.*
 
 Allows Troopers to withstand dangerous environments or traverse hazardous terrain. One set provides equipment for 2 Troopers.
+
+## Support
+
+The Squad can call upon long-range support during a mission: artillery, naval guns, mine fields, orbital strikes, bombardments or whatever the setting offers. These are abstracted as Support, called in through Radio Gear by a Trooper acting as Radio Operator.
+
+### Support Priority
+
+Each mission has a Support Priority pool, set by the briefing based on mission scale and strategic importance.
+
+| Mission Importance               | Support Priority |
+| -------------------------------- | ---------------- |
+| Routine patrol or independent op | 2                |
+| Standard mission                 | 4                |
+| High-priority operation          | 6                |
+| Set-piece offensive              | 8+               |
+
+The pool is shared across the Squad and persists for the entire mission.
+
+### Calling Support
+
+To call in Support, the Radio Operator rolls 1d6. The roll must be equal to or under the current Support Priority pool.
+
+- On success, Support is called in and its cost is subtracted from the pool.
+- On a failed roll, the Radio Operator may push through by paying double the Support’s cost from the pool. Support is called in. If the pool cannot cover double the cost, the call fails. The window is closed; try again later.
+
+Support cannot be attempted if the pool is below its base cost.
+
+A Trooper carrying Radio Gear must be present and able to act. The Radio Operator cannot call for Support while Bleeding Out or Dead.
+
+### Support Options
+
+| Support                | Cost |                                                     |
+| ---------------------- | ---- | --------------------------------------------------- |
+| Danger Close Artillery | 1    | During an Engagement, on the Squad's current Sector |
+| Minefield Drop         | 2    | Called down on area between Sectors                 |
+| Heavy Bombardment      | 3    | On a known Sector with confirmed enemy presence     |
+| Command, Air, Evac     | 1-2  | Calls in a Support Character                        |
+
+### Danger Close Artillery
+
+Call in an artillery strike on the current Sector (as the Interact intent). Hits in 1d2 Exchanges from now. When it hits, gain +2 Momentum instantly, with all ground based Hard Targets being destroyed. All Troopers must make a Mobility Check, gaining 1d3 Injury on failure.
+
+### Minefield
+
+Called between Sectors. A lane between two adjacent Sectors of the Squad's choosing is now mined. The mines persist for the rest of the mission. The Squad knows the safe paths and may cross the lane freely.
+
+When any other force attempts to cross the mined lane, roll 1d6.
+
+For thinking enemies (professional military, organized forces, anything with normal self-preservation):
+
+- 1-3: Mines spotted. The force halts or reroutes. Pursuit fails; the lane is closed to them.
+- 4-6: Mines triggered. The force takes severe losses and halts, losing 1 TL. Pursuit fails. Any subsequent pursuit through this lane during the mission is blocked entirely.
+
+For mindless or fanatic enemies (Horde modifier, drones, fanatics, anything that pushes regardless of cost):
+
+- 1-3: Mines triggered, force pushes through. Pursuing TL is reduced by 1 (minimum 1). They keep coming.
+- 4-6: Mines triggered, severe losses. Pursuing TL is reduced by 2 (minimum 1). They keep coming.
+
+Mindless enemies always trigger mines. They do not detect or reroute.
+
+### Heavy Bombardment
+
+A devastating long-range strike (artillery, naval guns, orbital bombardment, whatever the setting supports). Reshapes the ground and kills anything caught in the open.
+
+Can be called in while Catching Breath.
+
+**Targeting.** Can be called on any Sector with known enemy presence. This includes Sectors the Squad has previously entered, Sectors revealed through Intel (Boons, Recon missions, intercepted comms), or Sectors scouted by other means.
+
+**Cannot be called on the Squad's current Sector. If somehow targeted on the Squad's Sector, every Trooper is killed. No save, no roll. The bombardment does not distinguish friend from foe.**
+
+**Effects on the target Sector:**
+
+- Threat Level is reduced by 2.
+- Redefines the Sector's Cover and Space based on what was there. Buildings collapse into the streets they line. Forests get levelled. Open ground becomes cratered. Tunnels and enclosed structures may collapse entirely, becoming impassable.
+- **Mobility** is reduced by 1 in the Sector for the rest of the mission. Rubble, debris, and lingering dust make the ground hard to cross.
+- Strategic objectives in the Sector (AA installations, comms relays, fuel storage, etc.) are destroyed, unless explicitly hardened or dug in.
+- Hard Targets in the open are destroyed. Hard Targets in fortified positions take 2 Hits.
+
+**Redefine the Sector’s Cover and Space based on its contents.** A few examples:
+
+- A forest gets leveled. The canopy is gone, trees are splintered. Cover is generally reduced, Space is increased.
+- An open field gets cratered. Impact sites provide more cover than before. Space remains Open, Cover is increased from Exposed to Normal.
+- Light urban sprawl (single-or two-story buildings) gets reduced to rubble. Space is generally increased (you can now more easily move through the remnants of buildings). Cover is reduced to Normal if it was Dense before.
+- Dense urban sprawl (city streets, tall buildings) collapses into the streets. Cover increases as large chunks of rubble are scattered everywhere. Space is decreased, as the debris collapses into the streets, plazas and alleyways.
+- A bunker complex's surface structures crack and rupture. Tunnels may collapse outright, removing the Sector from the map.
