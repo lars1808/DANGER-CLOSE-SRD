@@ -38,9 +38,9 @@ Then, roll {roll:2d6|Advance} and apply the modifiers.
 | 2d6      | Result       | Momentum           | Defensive Positions |
 | -------- | ------------ | ------------------ | ------------------- |
 | ≤ 3      | AMBUSHED     | LOSING GROUND      | [[Flanked]]         |
-| 4–7      | SPOTTED      | CONTESTED          | [[In Cover]]        |
-| 8–10     | SURPRISE     | GAINING GROUND     | [[Fortified]]       |
-| 11+      | **Overwhelm** | -                 | -                   |
+| 4–8     | SPOTTED      | CONTESTED          | [[In Cover]]        |
+| 9–12   | SURPRISE     | GAINING GROUND     | [[Fortified]]       |
+| 13+     | **Overwhelm** | -                 | -                   |
 
 **Overwhelm.** Due to a mixture of luck, guts, training and teamwork, the Squad manages to absolutely overwhelm the enemy force. No resources are lost, and the enemy is routed. *Catch Breath*.
 

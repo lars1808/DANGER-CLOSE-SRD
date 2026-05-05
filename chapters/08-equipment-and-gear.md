@@ -27,7 +27,7 @@ Mobility Checks: roll 1d6 equal or under to succeed. A Trooper with Mobility 0 a
 | Medium | -                       | -1            |
 | Heavy  | +1 to final DEF result. | -2            |
 
-### Extra Armor Options
+### Special Armor
 
 | Armor              | Properties              | Mobility Cost | REQ Cost |
 | ------------------ | ----------------------- | ------------- | -------- |
@@ -123,6 +123,16 @@ Anti-armor launcher designed to destroy vehicles and strongpoints.
 *Active:* 
 
 - **+3 ATK** - or deal direct damage to a [[Hard Target]], counting as 2 Hits. Single use.
+
+### Flamethrower
+
+`REQ: 2 // Mobility: -2`
+
+Short-range incendiary weapon. Clears bottlenecks, denies ground.
+
+*Active:*
+
+- At the cost of 1 Ammo, instead of contributing [[ATK]] to the [[Offense Roll]], reduce [[Pressure]]. -3 Pressure in [[Tight]], -2 in [[Transitional]], -1 in [[Open]].
 
 ### Plasma Rifle
 
@@ -222,8 +232,8 @@ The pool is shared across the Squad and persists for the entire mission.
 
 To call in Support, the Radio Operator rolls 1d6. The roll must be equal to or under the current Support Priority pool.
 
-- On success, Support is called in and its cost is subtracted from the pool.
-- On a failed roll, the Radio Operator may push through by paying double the Support’s cost from the pool. Support is called in. If the pool cannot cover double the cost, the call fails. The window is closed; try again later.
+- On **success**, Support is called in and its cost is subtracted from the pool.
+- On **failure**, the Radio Operator may push through by paying double the Support’s cost from the pool. Support is called in. If the pool cannot cover double the cost, the call fails. The window is closed; try again later.
 
 Support cannot be attempted if the pool is below its base cost.
 
@@ -231,7 +241,7 @@ A Trooper carrying Radio Gear must be present and able to act. The Radio Operato
 
 ### Support Options
 
-| Support                | Cost |                                                     |
+| Support                | Cost | Use                                                 |
 | ---------------------- | ---- | --------------------------------------------------- |
 | Danger Close Artillery | 1    | During an Engagement, on the Squad's current Sector |
 | Minefield Drop         | 2    | Called down on area between Sectors                 |
@@ -273,15 +283,15 @@ Can be called in while Catching Breath.
 **Effects on the target Sector:**
 
 - Threat Level is reduced by 2.
-- Redefines the Sector's Cover and Space based on what was there. Buildings collapse into the streets they line. Forests get levelled. Open ground becomes cratered. Tunnels and enclosed structures may collapse entirely, becoming impassable.
+- Redefines the Sector's Cover and Space based on what was there. See below.
 - **Mobility** is reduced by 1 in the Sector for the rest of the mission. Rubble, debris, and lingering dust make the ground hard to cross.
 - Strategic objectives in the Sector (AA installations, comms relays, fuel storage, etc.) are destroyed, unless explicitly hardened or dug in.
 - Hard Targets in the open are destroyed. Hard Targets in fortified positions take 2 Hits.
 
 **Redefine the Sector’s Cover and Space based on its contents.** A few examples:
 
-- A forest gets leveled. The canopy is gone, trees are splintered. Cover is generally reduced, Space is increased.
-- An open field gets cratered. Impact sites provide more cover than before. Space remains Open, Cover is increased from Exposed to Normal.
+- Forests gets leveled. The canopy is gone, trees are splintered. Cover is generally reduced, Space is increased.
+- Fields are cratered. Impact sites provide more cover than before. Space remains Open, Cover is increased from Exposed to Normal.
 - Light urban sprawl (single-or two-story buildings) gets reduced to rubble. Space is generally increased (you can now more easily move through the remnants of buildings). Cover is reduced to Normal if it was Dense before.
 - Dense urban sprawl (city streets, tall buildings) collapses into the streets. Cover increases as large chunks of rubble are scattered everywhere. Space is decreased, as the debris collapses into the streets, plazas and alleyways.
 - A bunker complex's surface structures crack and rupture. Tunnels may collapse outright, removing the Sector from the map.
