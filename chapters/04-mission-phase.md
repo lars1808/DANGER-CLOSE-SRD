@@ -65,25 +65,77 @@ Then, if Stealth is still active, count the number of successful Mobility Checks
 
 ## Retreat!
 
-Unable to break through, the Squad falls back to their previous Sector. This can occur due to [[Momentum]] reaching DEFEAT, or falling back by choice.
+The Squad falls back to their previous Sector. This can happen because Momentum reached DEFEAT, or because the Squad chose to disengage on their own terms.
 
-- If the Squad wants to escape, roll {roll:1d6|Pursuit}. On a **4–6**, the enemy pursues. On a **1–3**, the enemy holds position and does not give chase.
-- If the Squad chooses to draw the enemy out, pursuit is automatic.
+The Squad declares one of two maneuvers:
 
-When the enemy pursues, they must split their forces:
+- **Break Contact.** Disengage cleanly and avoid pursuit.
+- **Fighting Withdrawal.** Draw pursuers out, peeling them off the original Sector and onto chosen ground.
 
-| Original TL            | Pursuing TL | Remaining TL |
-| ---------------------- | ----------- | ------------ |
-| 4 (Overwhelming)       | 3           | 3            |
-| 3 (Heavy)              | 2           | 2            |
-| 2 (Standard)           | 1           | 1            |
-| 1 (Light)              | 1           | 0 (Sector is now empty) |
+Each Trooper makes a Mobility Check. **Half or more succeeding** means the Squad executed their maneuver well.
 
-If the Squad chooses to draw them out, reduce the pursuing TL by 1 (to a minimum of TL 1). *Example:* from a TL 3 force, the enemy pursues with TL 1 and leaves behind TL 2.
+| Maneuver            | Half or More Succeed                  | Less Than Half Succeed     |
+| ------------------- | ------------------------------------- | -------------------------- |
+| Break Contact       | No pursuit. Squad falls back cleanly. | Minor Pursuit              |
+| Fighting Withdrawal | Successful Fighting Withdrawal        | Failed Fighting Withdrawal |
 
-Drawing an enemy out into a previous Sector with a high Cover Rating can be quite advantageous - but fleeing from an enemy into a Sector with a low Cover Rating is risky, if the enemy decides to pursue.
+The TL of the force the Squad is fleeing from is referred to as **Base TL**.
 
-The last Sector visited by the Squad is always safe to fall back to. Beyond that, there’s a risk of running into additional forces if falling back again. If caught between new forces and pursuing forces, sum up the TL of the Sector entered and any pursuing forces (to a maximum of 4), and set the Pressure to its maximum possible value right away.
+**Threat Level is abstract.** TL measures enemy capability, not body count. The same group of foes can rate higher in TL when they're ferocious, well-equipped, or coordinated, and lower when they're scattered, demoralized, or worn down. A Remnant TL of 0 doesn't even have to mean that a position is completely abandoned. It might just mean what's left isn't worth tracking as a threat to the Squad.
+
+**Patrol or Position.** If fleeing from a defended position rather than a patrol or hunting force, reduce Pursuing TL by 1 (minimum 1) and increase Remnant TL by 1 (maximum 4). Mobile Hard Targets do not pursue. Defenders hold their ground.
+
+### Minor Pursuit
+
+The Squad is pursued by a TL 1 force. Base TL is not lowered.
+
+### Successful  Fighting Withdrawal
+
+| Base TL | Pursuing TL | Remnant TL |
+| ------- | ----------- | ---------- |
+| 1       | 1           | 0          |
+| 2       | 1           | 1          |
+| 3       | 2           | 1          |
+| 4       | 3           | 2          |
+
+Mobile Hard Targets, such as Tanks, Brutes, Elite Squads etc. have a 2-in-6 chance of choosing to pursue.
+
+### Failed  Fighting Withdrawal
+
+| Base TL | Pursuing TL | Remnant TL | Starting Pressure |
+| ------- | ----------- | ---------- | ----------------- |
+| 1       | 1           | 0          | 1                 |
+| 2       | 2           | 1          | 2                 |
+| 3       | 2           | 2          | 3                 |
+| 4       | 3           | 2          | 4                 |
+
+Mobile Hard Targets, such as Tanks, Brutes, Elite Squads etc. have a 4-in-6 chance of choosing to pursue.
+
+### Retreat Roll
+
+Make an Advance Roll, with these changes:
+
+- Pursuing TL is the modifier (not Sector TL)
+- +1 for falling back to a known Sector. An additional +1 if Sector is prepared beforehand (defenses and such).
+- +1 on a Successful Fighting Withdrawal
+- Stealth does not apply
+
+The results of the Advance Roll are interpreted in the context of a retreat:
+
+- AMBUSHED becomes **DISORDERLY RETREAT**. The fall-back collapses into chaos. The Squad is scattered, the enemy on their heels.
+- SPOTTED becomes **HARRIED**. The Squad gives ground but holds formation. Pursuers harass without breaking through.
+- SURPRISE becomes **CONTROLLED RETREAT**. The Squad falls back in good order, choosing their ground.
+- Overwhelm becomes **KILL FUNNEL**. The pursuing force runs straight into the Squad's prepared positions and is annihilated. No Engagement.
+
+Effects on Momentum and Defensive Positions are identical to the Advance Roll. Offensive Position is set by individual Mobility Checks, as normal.
+
+The Engagement begins immediately in the previous Sector with the Pursuing TL, the Momentum and Defensive Positions from the Retreat Roll, and any listed Starting Pressure already on the track.
+
+### Falling Back Further
+
+The Squad can choose to retreat *again*.
+
+The last Sector visited is always safe to fall back to. Falling back beyond that risks running into additional forces. If caught between new forces and pursuing forces, sum up the TL of the new Sector and any pursuing TL (to a maximum of 4), and set Pressure to its cap immediately.
 
 ## Catch Breath
 

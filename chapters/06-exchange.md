@@ -91,6 +91,7 @@ Pool all ATK from the Squad and roll that many d6s. Take the highest value.
 - Add **+1 ATK** if Momentum was gained last Exchange.
 - Add **+1 ATK** if a Trooper died last Exchange.
 - Subtract -**ATK** equal to the current **[[Pressure]]**.
+- Add or subtract **ATK** for [[Tactical Asymmetry]].
 - If the pool is 0 ATK, roll {roll:2d6kl1|0 ATK pool} and take the lowest. Success at a Cost is not available at 0 ATK.
 
 | Offense Roll Result | Outcome |

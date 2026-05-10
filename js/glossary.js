@@ -412,6 +412,12 @@ window.GLOSSARY = {
     xref: ["Mission"],
     chapter: "after-the-mission",
     anchor: "the-field-report"
+  },
+    "Tactical Asymmetry": {
+    def: "Post-mission narrative exercise. Answer prompts about the mission to turn dice rolls into your regiment's history.",
+    xref: ["Offense Roll"],
+    chapter: "exchange",
+    anchor: "tactical-asymmetry"
   }
 };
 
