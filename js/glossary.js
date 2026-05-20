@@ -102,11 +102,11 @@ window.GLOSSARY = {
     chapter: "equipment-and-gear",
     anchor: "weapon-properties"
   },
-  "Grit": {
-    def: "Expendable resource. Spend to re-roll a Move or Defense Roll die. Survivors gain +1 Grit after a mission (max 3).",
-    xref: ["Mobility Check", "Defense Roll"],
-    chapter: "the-squad"
-  },
+"Grit": {
+  def: "Expendable resource. Spend to re-roll a Move or Defense Roll die, or to boost an Advance Roll via Press the Advance. Recovered in-mission by surviving Direct Fire, downing Hard Targets, or pushing through to positive Momentum. Survivors gain +1 Grit after a mission (max 3).",
+  xref: ["Mobility Check", "Defense Roll", "Press the Advance"],
+  chapter: "the-squad"
+},
   "Ammo": {
     def: "Abstracted munitions. Troopers start with 3 (max 3). Spend to boost attacks or fire Special Weapons.",
     xref: ["Trooper"],
@@ -165,12 +165,12 @@ window.GLOSSARY = {
     chapter: "the-mission",
     anchor: "cover"
   },
-  "Normal Cover": {
-    def: "Cover 1. Scattered cover. No more than 2 Troopers can be Fortified.",
-    xref: ["Cover", "Exposed Cover", "Dense Cover"],
-    chapter: "the-mission",
-    anchor: "cover"
-  },
+"Normal Cover": {
+  def: "Cover 1. Scattered cover. 1d4 Troopers can be Fortified, rolled when the Squad first enters the Sector.",
+  xref: ["Cover", "Exposed Cover", "Dense Cover"],
+  chapter: "the-mission",
+  anchor: "cover"
+},
   "Dense Cover": {
     def: "Cover 2. Rubble, solid walls, barricades. No limit on Fortified Troopers.",
     xref: ["Cover", "Exposed Cover", "Normal Cover"],
@@ -189,12 +189,12 @@ window.GLOSSARY = {
     chapter: "the-mission",
     anchor: "space"
   },
-  "Transitional Space": {
-    def: "Space 1. Courtyards, broken streets, alleyways. No more than 2 Troopers can be Flanking.",
-    xref: ["Space", "Tight Space", "Open Space"],
-    chapter: "the-mission",
-    anchor: "space"
-  },
+"Transitional Space": {
+  def: "Space 1. Courtyards, broken streets, alleyways. 1d4 Troopers can be Flanking, rolled when the Squad first enters the Sector.",
+  xref: ["Space", "Tight Space", "Open Space"],
+  chapter: "the-mission",
+  anchor: "space"
+},
   "Open Space": {
     def: "Space 2. Plazas, squares, promenades, fields. No limit on Flanking Troopers.",
     xref: ["Space", "Tight Space", "Transitional Space"],
@@ -276,12 +276,12 @@ window.GLOSSARY = {
     chapter: "engagement",
     anchor: "trooper-position"
   },
-  "Flanking": {
-    def: "Best Offensive Position. The Trooper adds their Flanking Bonus ATK when Firing. Limited by Sector Space.",
-    xref: ["Offensive Position", "Flanking Bonus", "Space"],
-    chapter: "engagement",
-    anchor: "trooper-position"
-  },
+"Flanking": {
+  def: "Best Offensive Position. The Trooper adds their Flanking Bonus ATK when Firing, and any 6s they roll count double toward Momentum. Limited by Sector Space.",
+  xref: ["Offensive Position", "Flanking Bonus", "Space", "Momentum"],
+  chapter: "engagement",
+  anchor: "trooper-position"
+},
   "Flanked": {
     def: "Worst Defensive Position. Direct Fire on a roll of 3 or less. Must Fall Back on Momentum Loss or suffer −1 DEF.",
     xref: ["Defensive Position", "In Cover", "Fortified"],
@@ -324,12 +324,12 @@ window.GLOSSARY = {
     chapter: "exchange",
     anchor: "move"
   },
-  "Covering Fire": {
-    def: "Intent: grant +1 DEF to a fellow Trooper. Stacks with multiple providers. LMG adds an additional +1 DEF.",
-    xref: ["DEF", "Defense Roll"],
-    chapter: "exchange",
-    anchor: "covering-fire"
-  },
+"Covering Fire": {
+  def: "Intent: grant +1 DEF to a fellow Trooper. If they Move this Exchange, also grants +1 Mobility for that Move. Stacks with multiple providers.",
+  xref: ["DEF", "Defense Roll", "Move", "Mobility"],
+  chapter: "exchange",
+  anchor: "covering-fire"
+},
   "Use Special Gear": {
     def: "Intent: fire heavy weapons, call in airstrikes, or use other Special Equipment or Special Weapons. Some take a full Exchange.",
     xref: ["Gear"],
@@ -354,24 +354,24 @@ window.GLOSSARY = {
     chapter: "exchange",
     anchor: "improvise"
   },
-  "Suppressed": {
-    def: "Chosen instead of Injury on a failed Defense Roll. Cannot Fire next Exchange. Clears on a passed Defense Roll or becoming Fortified. Cannot be chosen twice in a row.",
-    xref: ["Defense Roll", "Fire", "Fortified", "Injury"],
-    chapter: "exchange",
-    anchor: "suppressed"
-  },
-  "Pressure": {
-    def: "Accumulated enemy fire weight during an Engagement. Increases when Enemy Tactics d6 shows 4+. Each point imposes −1 ATK. Can be targeted as a Hard Target to reduce.",
-    xref: ["ATK", "Enemy Tactics", "Hard Target"],
-    chapter: "exchange",
-    anchor: "pressure"
-  },
-  "Offense Roll": {
-    def: "Pool all ATK from Firing Troopers, roll d6s, take highest. 6 = Success, 4–5 = Hold or Success at a Cost, ≤3 = Pushed Back.",
-    xref: ["Exchange", "Momentum", "ATK"],
-    chapter: "exchange",
-    anchor: "offense-roll"
-  },
+"Suppressed": {
+  def: "Chosen instead of Injury on a failed Defense Roll. Flanked Troopers cannot go Suppressed. Limits next Exchange to Move or Interact only. Clears on a passed Defense Roll or becoming Fortified. At TL 3-4, still takes 1 Injury.",
+  xref: ["Defense Roll", "Fire", "Fortified", "Injury", "Flanked"],
+  chapter: "exchange",
+  anchor: "suppressed"
+},
+"Pressure": {
+  def: "Accumulated enemy fire weight during an Engagement. Increases by 1 each Exchange (max TL+1). Each point imposes −1 ATK. Can be targeted as a Hard Target to reduce. At TL 3-4, overflow converts to -1 DEF on a random Trooper.",
+  xref: ["ATK", "Enemy Tactics", "Hard Target", "Pressure Overflow"],
+  chapter: "exchange",
+  anchor: "pressure"
+},
+"Offense Roll": {
+  def: "Pool all ATK from Firing Troopers, roll d6s, take highest. 6 = Success (+1 Momentum per 6, Flanking 6s count double), 4-5 = Hold or Success at a Cost, ≤3 = Pushed Back.",
+  xref: ["Exchange", "Momentum", "ATK", "Flanking"],
+  chapter: "exchange",
+  anchor: "offense-roll"
+},
   "Defense Roll": {
     def: "Each Trooper rolls DEF d6s and takes highest. Armor modifies result. Outcome depends on Defensive Position.",
     xref: ["Exchange", "Injury", "Armor", "DEF"],
@@ -384,12 +384,12 @@ window.GLOSSARY = {
     chapter: "exchange",
     anchor: "injury"
   },
-  "Enemy Tactics": {
-    def: "End-of-Exchange roll: 1d6 + Threat Level. Triggers Reposition, Scatter, Pinned Down, Encircle, Push Forward, or Fall Back. Sergeant can nullify with 1 Grit.",
-    xref: ["Exchange", "Threat Level", "Grit", "Pressure"],
-    chapter: "exchange",
-    anchor: "enemy-tactics"
-  },
+"Enemy Tactics": {
+  def: "End-of-Exchange roll: 1d6 + Threat Level. Triggers Reposition, Scatter, Pinned Down, Encircle, Push Forward, or Fall Back. Sergeant can nullify with 1 Grit.",
+  xref: ["Exchange", "Threat Level", "Grit", "Pressure"],
+  chapter: "exchange",
+  anchor: "enemy-tactics"
+},
   "Hard Target": {
     def: "Tanks, gun nests, brutes. Fired on in a separate dice pool. 6 = Hit, 4–5 = Hit at a Cost.",
     xref: ["Offense Roll"],
@@ -413,12 +413,24 @@ window.GLOSSARY = {
     chapter: "after-the-mission",
     anchor: "the-field-report"
   },
-    "Tactical Asymmetry": {
-    def: "Post-mission narrative exercise. Answer prompts about the mission to turn dice rolls into your regiment's history.",
-    xref: ["Offense Roll"],
-    chapter: "exchange",
-    anchor: "tactical-asymmetry"
-  }
+"Tactical Asymmetry": {
+  def: "Persistent ATK modifier set at the start of an Engagement based on terrain advantage. +1 ATK each Exchange if the Squad holds a clear edge (elevation, fortifications), -1 ATK if the enemy does, 0 if neither.",
+  xref: ["Offense Roll", "ATK"],
+  chapter: "engagement",
+  anchor: "tactical-asymmetry"
+},
+"Pressure Overflow": {
+  def: "At TL 3 and TL 4, when Pressure is capped and would increase, the increase instead becomes -1 DEF on a random Trooper for the next Defense Roll.",
+  xref: ["Pressure", "Defense Roll"],
+  chapter: "exchange",
+  anchor: "pressure-overflow"
+},
+"Press the Advance": {
+  def: "After making an Advance Roll, the Squad may spend Grit to boost the result. Each Trooper can contribute 1 Grit for +1, to a maximum of +5.",
+  xref: ["Advance Roll", "Grit"],
+  chapter: "mission-phase",
+  anchor: "press-the-advance"
+}
 };
 
 // Aliases — alternate forms that map to a canonical glossary key.
@@ -492,5 +504,7 @@ window.GLOSSARY_ALIASES = {
   "flanking": "Flanking",
   "flanked": "Flanked",
   "in cover": "In Cover",
-  "fortified": "Fortified"
+  "fortified": "Fortified",
+  "press the advance": "Press the Advance",
+"pressure overflow": "Pressure Overflow"
 };
