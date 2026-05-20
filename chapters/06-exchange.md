@@ -23,7 +23,7 @@ fire.
 
 Firing is the staple action. Each **[[ATK]]** increases the odds of gaining Momentum. If nobody Fires, the Squad will likely lose ground. Gear (weapons, equipment) modifies ATK in various ways. 
 
-A Trooper's **Flanking Bonus** is determined by their [[Mobility]]: +1 by default, +2 if Mobility ≥ 4, +3 if Mobility ≥ 5. Roll Flanking Bonus d6’s separately, as these count double in the Offense Roll.
+A Trooper's **Flanking Bonus** is determined by their [[Mobility]]: +1 by default, +2 if Mobility ≥ 4, +3 if Mobility ≥ 5. 
 
 Being **[[Suppressed]]** prevents a Trooper from firing. If firing at a [[Hard Target]], set those ATK aside - they are tracked and rolled separately.
 
@@ -120,7 +120,7 @@ If this Momentum gain pushes Momentum to VICTORY, make one final Defense Roll fo
 
 ### Success
 
-Gain +1 Momentum per 6 rolled. 6s rolled by [[Flanking]] Troopers count double.
+Gain +1 Momentum per 6 rolled, to a maximum of +2 Momentum this Exchange. Each 6 rolled beyond the cap removes 1 [[Pressure]] instead.
 
 If this Momentum gain pushes Momentum to VICTORY, the Engagement is won. If you obtain a Success you can also opt to **Hold Position** instead, as that might be beneficial during defense or extraction missions. 
 

@@ -277,7 +277,7 @@ window.GLOSSARY = {
     anchor: "trooper-position"
   },
 "Flanking": {
-  def: "Best Offensive Position. The Trooper adds their Flanking Bonus ATK when Firing, and any 6s they roll count double toward Momentum. Limited by Sector Space.",
+  def: "Best Offensive Position. The Trooper adds their Flanking Bonus ATK when Firing. Limited by Sector Space.",
   xref: ["Offensive Position", "Flanking Bonus", "Space", "Momentum"],
   chapter: "engagement",
   anchor: "trooper-position"
@@ -361,13 +361,13 @@ window.GLOSSARY = {
   anchor: "suppressed"
 },
 "Pressure": {
-  def: "Accumulated enemy fire weight during an Engagement. Increases by 1 each Exchange (max TL+1). Each point imposes −1 ATK. Can be targeted as a Hard Target to reduce. At TL 3-4, overflow converts to -1 DEF on a random Trooper.",
+  def: "Accumulated enemy fire weight during an Engagement. Increases by 1 each Exchange (max TL+1). Each point imposes −1 ATK. Reduced by extra 6s on the Offense Roll past the Momentum cap, or by targeting as a Hard Target. At TL 3-4, overflow converts to -1 DEF on a random Trooper.",
   xref: ["ATK", "Enemy Tactics", "Hard Target", "Pressure Overflow"],
   chapter: "exchange",
   anchor: "pressure"
 },
 "Offense Roll": {
-  def: "Pool all ATK from Firing Troopers, roll d6s, take highest. 6 = Success (+1 Momentum per 6, Flanking 6s count double), 4-5 = Hold or Success at a Cost, ≤3 = Pushed Back.",
+  def: "Pool all ATK from Firing Troopers, roll d6s, take highest. 6 = Success (+1 Momentum per 6, max +2 this Exchange; extra 6s remove Pressure), 4-5 = Hold or Success at a Cost, ≤3 = Pushed Back.",
   xref: ["Exchange", "Momentum", "ATK", "Flanking"],
   chapter: "exchange",
   anchor: "offense-roll"
