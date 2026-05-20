@@ -14,7 +14,13 @@ A Trooper's [[Armor]], [[Weapon]] and [[Special Gear]], such as [[Special Weapon
 
 ## Grit
 
-An expendable resource that allows a Trooper to push through. Can be used to re-roll a [[Movement|Move]] or [[Defense Roll]], as well as used for special skills. If a Trooper survives a Mission, they replenish their Grit and gain an extra use, to a maximum of 3.
+An expendable resource that allows a Trooper to push through. Can be used to re-roll a [[Movement|Move]] or [[Defense Roll]], spent on the [[Press the Advance]] action, or used for special skills. Grit can be recovered in the field by:
+
+- A Trooper taking Direct Fire, not going Suppressed, and remaining standing afterward (Grazed or Wounded). Regain 1 Grit.
+- The Squad taking down a [[Hard Target]]. Choose one Trooper that regains 1 Grit.
+- The Squad crosses from negative or 0 Momentum into +1 or higher. Choose one Trooper that regains 1 Grit.
+
+If a Trooper survives a Mission, they replenish their Grit and gain +1 (to maximum 3).
 
 ## Ammo
 

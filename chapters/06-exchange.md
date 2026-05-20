@@ -16,12 +16,16 @@ Intent describes where a Trooper's **focus** is. Everyone is assumed to be shoot
 
 ### ATK & DEF
 
-Throughout these rules, **[[ATK]]** refers to dice (d6’s) added to the Squad's Offense Roll, and **[[DEF]]** to dice added to or subtracted from a Trooper's Defense Roll. The Squad attacks as one: all ATK from every Trooper is pooled into a single dice pool roll that determines whether the Squad gains ground, holds, or gets pushed back. Death, on the other hand, is personal. Each Trooper rolls their own Defense Roll to survive incoming 
+Throughout these rules, **[[ATK]]** refers to dice (d6’s) added to the Squad's Offense Roll, and **[[DEF]]** to dice added to or subtracted from a Trooper's Defense Roll. The Squad attacks as one: all ATK from every Trooper is pooled into a single dice pool roll that determines whether the Squad gains ground, holds, or gets pushed back. Each Trooper rolls their own Defense Roll to survive incoming 
 fire.
 
 ### Fire
 
-Firing is the staple action. Each **[[ATK]]** increases the odds of gaining Momentum. If nobody Fires, the Squad will likely lose ground. Gear (weapons, equipment) modifies ATK in various ways. A Trooper's **Flanking Bonus** is determined by their [[Mobility]]: +1 by default, +2 if Mobility ≥ 4, +3 if Mobility ≥ 5. Being **[[Suppressed]]** prevents a Trooper from firing. If firing at a [[Hard Target]], set those ATK aside - they are tracked and rolled separately.
+Firing is the staple action. Each **[[ATK]]** increases the odds of gaining Momentum. If nobody Fires, the Squad will likely lose ground. Gear (weapons, equipment) modifies ATK in various ways. 
+
+A Trooper's **Flanking Bonus** is determined by their [[Mobility]]: +1 by default, +2 if Mobility ≥ 4, +3 if Mobility ≥ 5. Roll Flanking Bonus d6’s separately, as these count double in the Offense Roll.
+
+Being **[[Suppressed]]** prevents a Trooper from firing. If firing at a [[Hard Target]], set those ATK aside - they are tracked and rolled separately.
 
 | Factor                      | Impact     |
 | --------------------------- | ---------- |
@@ -30,8 +34,6 @@ Firing is the staple action. Each **[[ATK]]** increases the odds of gaining Mome
 | Using 1 [[Ammo]]            | +1 ATK     |
 | Being Limited               | -1 ATK     |
 | Each degree of [[Pressure]] | -1 ATK     |
-
-> Throughout these rules, **ATK** refers to dice (d6s) added to the Squad's Offense Roll, and **DEF** to dice added to or subtracted from a Trooper's Defense Roll. The Squad attacks as one: all ATK from every Trooper is pooled into a single dice pool roll that determines whether the Squad gains ground, holds, or gets pushed back. Death, on the other hand, is personal. Each Trooper rolls their own Defense Roll to survive incoming fire.
 
 ### Move
 
@@ -45,7 +47,7 @@ The Trooper repositions on the battlefield. Make a [[Mobility Check]]. [[Grit]] 
 
 ### Covering Fire
 
-The Trooper adds **+1 [[DEF]]** to a fellow Trooper. Multiple Troopers can provide covering fire to the same Trooper, stacking the bonus.
+The Trooper adds **+1 [[DEF]]** to a fellow Trooper. If the covered Trooper Moves this Exchange, they also gain **+1 Mobility** for that Move. Multiple Troopers can provide covering fire to the same Trooper, stacking the DEF and Mobility bonus.
 
 > *"Keep his head down!"* Lambda-5 rattles off a burst toward the window where the muzzle flash was. He's not trying to hit anyone. He just needs them to flinch long enough for Gamma-2 to make it across the street.
 
@@ -110,11 +112,17 @@ Each Trooper gains +1 DEF this Exchange. No Momentum change.
 
 ### Success at a Cost
 
-Gain +1 Momentum. -1 DEF for the most at-risk Trooper (most injured in the worst Defensive Position). If this applies to multiple Troopers, pick one at random. This Trooper also takes +1 [[Injury]] if hit. If this Momentum gain pushes Momentum to VICTORY, make one final Defense Roll for all Troopers, in which it's not possible to go [[Suppressed]].
+Gain +1 Momentum. -1 DEF for the most at-risk Trooper (most injured in the worst Defensive Position). 
+
+If this applies to multiple Troopers, pick one at random. This Trooper also takes +1 [[Injury]] if hit. 
+
+If this Momentum gain pushes Momentum to VICTORY, make one final Defense Roll for all Troopers, in which it's not possible to go [[Suppressed]].
 
 ### Success
 
-Gain +1 Momentum. If you roll a number of 6s ≥ [[Threat Level]] + 1, gain 1 additional Momentum (so never more than +2 Momentum per Exchange). If this Momentum gain pushes Momentum to VICTORY, the Engagement is won. If you obtain a Success you can also opt to **Hold Position** instead, as that might be beneficial during defense or extraction missions. 
+Gain +1 Momentum per 6 rolled. 6s rolled by [[Flanking]] Troopers count double.
+
+If this Momentum gain pushes Momentum to VICTORY, the Engagement is won. If you obtain a Success you can also opt to **Hold Position** instead, as that might be beneficial during defense or extraction missions. 
 
 If after the Offense Roll, Momentum is not at DEFEAT or VICTORY, the fight continues. The other effects of Momentum gain/loss are resolved after the Defense Roll.
 
@@ -154,15 +162,6 @@ The Defense Roll failed, bullets (or an equivalent) are hitting closer and close
 
 A Trooper's [[Status]] is either OK, Grazed, Wounded, Bleeding Out or Dead. This works as a 'track'; 1 Injury when OK moves the Status to Grazed, taking 2 Injuries when Grazed moves the Trooper to Bleeding Out.
 
-The severity of Injury suffered depends on the Threat Level:
-
-| Threat Level     | Injury       |
-| ---------------- | ------------ |
-| 1 - Light        | 1 Injury     |
-| 2 - Standard     | {roll:1d2} Injuries |
-| 3 - Heavy        | {roll:1d3} Injuries |
-| 4 - Overwhelming | {roll:1d4} Injuries |
-
 | Status       | Notes                                                        |
 | ------------ | ------------------------------------------------------------ |
 | OK           | All good                                                     |
@@ -171,13 +170,24 @@ The severity of Injury suffered depends on the Threat Level:
 | Bleeding Out | Dies at the end of next Exchange unless stabilized. Cannot take actions. |
 | Dead         | KIA                                                          |
 
+The severity of Injury suffered depends on the Threat Level:
+
+| Threat Level     | Injury       | Injury (Suppressed) |
+| ---------------- | ------------ | ------------ |
+| 1 - Light        | 1 Injury     | No Injury |
+| 2 - Standard     | {roll:1d2} Injuries | No Injury |
+| 3 - Heavy        | {roll:1d3} Injuries | 1 Injury |
+| 4 - Overwhelming | {roll:1d4} Injuries | 1 Inj |
+
 ### Suppressed
 
-A Trooper that fails their Defense Roll can choose to become **Suppressed**. They avoid Injury entirely, but cannot Fire (or use similar offensive Gear) or provide Covering Fire in the next Exchange. Choose this before the severity of Injury is rolled for.
+A Trooper that fails their Defense Roll can choose to become **Suppressed** instead of taking the full Injury. Choose this before the severity of Injury is rolled for. A [[Flanked]] Trooper cannot go Suppressed. Suppressed damage depends on the [[Threat Level]], see above.
 
-- A Suppressed Trooper remains Suppressed until they pass a [[Defense Roll]] or become [[Fortified]].
-- Being or becoming Fortified clears Suppressed, but only after the Exchange's Offense Roll. The Trooper still loses their ability to Fire for one Exchange.
-- A Suppressed Trooper cannot choose to become Suppressed again - a second failed Defense Roll causes Injury.
+A Suppressed Trooper is hugging dirt. Next Exchange, they can only **Move** (any kind) or **Interact**. No Fire, no Covering Fire, no Special Weapons, no Improvise.
+
+- Suppressed clears when the Trooper passes a [[Defense Roll]] or becomes [[Fortified]].
+- Being or becoming Fortified clears Suppressed, but only after that Exchange's Offense Roll. The Trooper still loses their action for that Exchange.
+- A Suppressed Trooper who fails a second Defense Roll takes the Injury. They cannot Suppress out of it again.
 
 ## Momentum Gain & Loss
 
@@ -223,6 +233,10 @@ As an Engagement drags on, the enemy adapts and reinforces. This accumulated wei
 - Pressure can be targeted during Fire as a [[Hard Target]]. Each Hit reduces Pressure by 1.
 - Pressure resets between Engagements.
 - Reaching VICTORY routs the enemy and clears Pressure along with them.
+
+### Pressure Overflow
+
+In TL 3 and TL 4 Engagements, Pressure caps at TL+1 as normal. When an Exchange ends and Pressure would increase past the cap, the increase converts to -1 DEF on a random Trooper for the next Defense Roll instead.
 
 ## The End of the Engagement
 

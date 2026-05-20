@@ -17,18 +17,18 @@ For a Sector's **[[Cover]]**, roll {roll:1d6|Cover}. Cover is expanded upon in [
 | 1d6  | Cover                                           | Max. Fortified |
 | ---- | ----------------------------------------------- | -------------- |
 | 1    | **0 - Exposed.** No real cover.                 | None           |
-| 2–4  | **1 - Normal.** Scattered cover.                | 2              |
+| 2–4  | **1 - Normal.** Scattered cover.                | Variable (1d4) |
 | 5–6  | **2 - Dense.** Rubble, solid walls, barricades. | No limit       |
 
 ## Space
 
 A Sector's **[[Space]]** describes the degree to which the battlefield is open or cramped, and allows Troopers to maneuver. See [[Engagement|Engagements]]. Roll {roll:1d6|Space}.
 
-| 1d6  | Space                                                        | Max. Flanking |
-| ---- | ------------------------------------------------------------ | ------------- |
-| 1    | **0 - Tight.** Tunnels, narrow corridors, trenches.          | None          |
-| 2–4  | **1 - Transitional.** Courtyards, broken streets, alleyways, scattered ruins. | 2             |
-| 5–6  | **2 - Open.** Plazas, squares, promenades, fields.           | No limit      |
+| 1d6  | Space                                                        | Max. Flanking  |
+| ---- | ------------------------------------------------------------ | -------------- |
+| 1    | **0 - Tight.** Tunnels, narrow corridors, trenches.          | None           |
+| 2–4  | **1 - Transitional.** Courtyards, broken streets, alleyways, scattered ruins. | Variable (1d4) |
+| 5–6  | **2 - Open.** Plazas, squares, promenades, fields.           | No limit       |
 
 ## Sector Contents
 

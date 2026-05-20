@@ -28,8 +28,16 @@ Determine relevant modifiers:
 - **Fatigue**. -1 for each 3 Advance Rolls previously made during this mission.
 - **Weather/Environmental Conditions**. -1 if bad, -2 if terrible. If the Squad is clearly advantaged by the environment, gain +1. If clearly disadvantaged, -1.
 - **Threat Level**. Negative modifier equal to TL.
-- **Assault**. Before rolling the Advance Roll, you may spend [[Ammo]] to enhance the roll, at a rate of 2 Ammo for a +1. You cannot [[Infiltration|Infiltrate]]on the same Advance.
+- **Assault**. Before rolling the Advance Roll, you may spend [[Ammo]] to enhance the roll, at a rate of 2 Ammo for a +1. You cannot use [[Infiltration]] on the same Advance.
 - **Stealth**. If the enemy is unaware of any hostile presence in this mission area, gain +3 on the roll. Using Assault or rolling SPOTTED or worse forfeits this bonus for the rest of the mission.
+
+### Press the Advance
+
+After making the Advance Roll, the Squad may push the result higher by spending [[Grit]]. Each Trooper may contribute 1 Grit, granting +1 to the result, to a maximum of +5 from a full Squad.
+
+All Grit is declared and spent together. The new result is final.
+
+> *LIMA Squad rolls an 8 (SPOTTED) on their Advance Roll. Four Troopers each spend 1 Grit, pushing the result to 12: SURPRISE. One step short of Overwhelm, but a much better start.*
 
 ### Momentum & Defensive Positions
 

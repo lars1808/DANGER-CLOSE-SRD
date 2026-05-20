@@ -58,7 +58,7 @@ The Sector's [[Cover]] value (as set when initially creating the Sector) determi
 | Cover       | Defensive Position Effects                      |
 | ----------- | ----------------------------------------------- |
 | 0 - Exposed | Never Fortified.                                |
-| 1 - Normal  | No more than 2 Troopers can be Fortified.       |
+| 1 - Normal  | 1d4 Troopers can be Fortified*.                 |
 | 2 - Dense   | No limit on how many Troopers can be Fortified. |
 
 Similarly, the Sector's [[Space]] value determines the space Troopers have for offensive maneuvers, in the form of how many can **Flank** at the same time:
@@ -66,8 +66,10 @@ Similarly, the Sector's [[Space]] value determines the space Troopers have for o
 | Space           | Offensive Position Effects                           |
 | --------------- | ---------------------------------------------------- |
 | 0 - Tight       | Never Flanking.                                      |
-| 1 - Transitional | No more than 2 Troopers can be Flanking.            |
+| 1 - Transitional | 1d4 Troopers can be Flanking. |
 | 2 - Open        | No limit on how many Troopers can be Flanking.       |
+
+*Roll 1d4 to determine Cover and/or Space slots when the Squad first enters this Sector, and note it down in case the Sector gets revisited.
 
 ## Tactical Asymmetry
 
