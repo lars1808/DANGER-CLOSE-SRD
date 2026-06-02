@@ -10,7 +10,7 @@ During an **[[Exchange]]**:
 
 ## Intent
 
-Every Trooper that isn't currently [[Bleeding Out]] or Dead determines their course of action during this Exchange.
+Every Trooper that isn't currently [[Bleeding Out]], [[Down]] or Dead determines their course of action during this Exchange.
 
 Intent describes where a Trooper's **focus** is. Everyone is assumed to be shooting, ducking, reloading and staying alive. A Trooper not Firing may still pick off enemies, but not enough to shift the battle. A Trooper not Moving isn't frozen in place; their tactical position just stays the same.
 
@@ -27,13 +27,12 @@ A Trooper's **Flanking Bonus** is determined by their [[Mobility]]: +1 by defaul
 
 Being **[[Suppressed]]** prevents a Trooper from firing. If firing at a [[Hard Target]], set those ATK aside - they are tracked and rolled separately.
 
-| Factor                      | Impact     |
-| --------------------------- | ---------- |
-| Fire                        | 1 ATK      |
-| Flanking Bonus              | +1/2/3 ATK |
-| Using 1 [[Ammo]]            | +1 ATK     |
-| Being Limited               | -1 ATK     |
-| Each degree of [[Pressure]] | -1 ATK     |
+| Factor           | Impact     |
+| ---------------- | ---------- |
+| Fire             | 1 ATK      |
+| Flanking Bonus   | +1/2/3 ATK |
+| Using 1 [[Ammo]] | +1 ATK     |
+| Being Limited    | -1 ATK     |
 
 ### Move
 
@@ -160,14 +159,17 @@ The Defense Roll failed, bullets (or an equivalent) are hitting closer and close
 
 ### Injury
 
-A Trooper's [[Status]] is either OK, Grazed, Wounded, Bleeding Out or Dead. This works as a 'track'; 1 Injury when OK moves the Status to Grazed, taking 2 Injuries when Grazed moves the Trooper to Bleeding Out.
+A Trooper's [[Status]] is either OK, Grazed, Wounded, Bleeding Out, Down or Dead. This works as a 'track'; 1 Injury when OK moves the Status to Grazed, taking 2 Injuries when Grazed moves the Trooper to Bleeding Out.
+
+A singe hit can never move a Trooper past Bleeding Out. Surplus Injuries are not counted.
 
 | Status       | Notes                                                        |
 | ------------ | ------------------------------------------------------------ |
 | OK           | All good                                                     |
 | Grazed       | Restored to OK when Catching Breath                          |
-| Wounded      | Can only be healed through medical attention. -1 Mobility.   |
+| Wounded      | Can only be healed through medical attention. -1 ATK, fails all Mobility Checks. |
 | Bleeding Out | Dies at the end of next Exchange unless stabilized. Cannot take actions. |
+| Down         | Stabilized, but otherwise out of action. Not targeted in normal combat. Returns to Wounded once the Engagement ends. |
 | Dead         | KIA                                                          |
 
 The severity of Injury suffered depends on the Threat Level:
@@ -177,7 +179,15 @@ The severity of Injury suffered depends on the Threat Level:
 | 1 - Light        | 1 Injury     | No Injury |
 | 2 - Standard     | {roll:1d2} Injuries | No Injury |
 | 3 - Heavy        | {roll:1d3} Injuries | 1 Injury |
-| 4 - Overwhelming | {roll:1d4} Injuries | 1 Inj |
+| 4 - Overwhelming | {roll:1d4} Injuries | 1 Injury |
+
+### Death
+
+Death occurs when:
+
+- A Trooper who's **Bleeding Out** isn't stabilized to **Down** in time.
+- A Trooper who's **Bleeding Out** or **Down** gets hit by something big in fiction. They aren't targeted by regular enemy fire, but an artillery barrage or something similar can still hit them (unless prevented by other Troopers).
+- A Trooper is **Bleeding Out** or **Down**, and an Engagement is lost. The Squad is forced to retreat, and those out-of-action are overrun.
 
 ### Suppressed
 
@@ -195,48 +205,37 @@ At the end of the Exchange, see if the squad lost or gained Momentum.
 
 ### Momentum Gain
 
-- Gain +1 ATK on the next Offensive Roll.
-- Any Troopers that were [[Flanking]] can either choose to become [[Engaged]] (as the enemy falls back/there's no flanked enemies left to attack) or to remain [[Flanking]] (pursuing the enemy), but with -1 DEF the next Exchange.
-- Any Troopers that were [[Fortified]] can either choose to become [[Limited]] (safe, but with no immediate enemies to shoot) or [[Engaged]] + [[In Cover]] (moving up to press the advantage).
+- [[Flanking]] Troopers are exposed by their own push: **-1 DEF** next Exchange.
+- [[Fortified]] Troopers have outrun their angles: **-1 ATK** next Exchange.
+- +1 ATK next Exchange.
+- [[Pressure]] is lowered by 1.
 
 ### Momentum Loss
 
-On Momentum Loss, any Flanked Troopers must **Fall Back** in the next Exchange, or suffer -1 DEF during that round.
+- Flanked Troopers find the enemy closing on them: -1 DEF next Exchange.
 
 ## Enemy Tactics
 
-When fighting serious threats, the enemy will prepare for certain strategies at the end of an Exchange. The Troopers can see these coming, and can prepare accordingly. Roll {roll:1d6} + Threat Level to see which Tactic is triggered. Your Squad’s Sergeant, if not Bleeding Out or Suppressed, can nullify a Tactic at the cost of 1 Grit.
+The enemy doesn't wait for an opening. When the Squad slows, they push, and the harder the sector, the more often they do. At the end of an [[Exchange]], roll {roll:1d6}. On a roll equal to or under [[TL]], the enemy presses. Roll {roll:1d6} again:
 
-| 1d6 + TL | Tactic       |
-| -------- | ------------ |
-| 2-4      | None         |
-| 5        | Reposition   |
-| 6        | Scatter      |
-| 7        | Pinned Down  |
-| 8        | Encircle     |
-| 9        | Push Forward |
-| 10       | Fall Back    |
+| 1d6  | Effect                                                       |
+| ---- | ------------------------------------------------------------ |
+| 1-3  | **Push.** One Trooper of your choice drops one step of [[Defensive Position]]. |
+| 4-5  | **Press.** Every [[Flanking]] and [[Engaged]] Trooper drops one step of Defensive Position. |
+| 6    | **Overrun.** Every Trooper drops one step of Defensive Position. |
 
-- **Reposition**. A random [[Flanking]] Trooper becomes [[Engaged]]. *An enemy maneuver hinders line-of-sight.* 
-- **Scatter**. A random Trooper must Move next Exchange or take +1 [[Injury]]. *A grenade lands at someone’s feet.*
-- **Pinned Down**. **-2 ATK** on the next [[Offense Roll]]. *A hail of fire keeps everyone’s head down.*
-- **Encircle**. All [[Fortified]] Troopers are now [[In Cover]]. *Encroaching enemies endanger even careful Troopers.*
-- **Push Forward**. All Troopers reduce [[Defensive Position]] by 1 step. *The enemy rallies in a brutal rush.*
-- **Fall Back**. All Troopers reduce [[Offensive Position]] by 1 step. *The enemy solidifies their position, and the Squad is left without good angles.*
+Your Squad’s Sergeant, if not Bleeding Out or Suppressed, can nullify a Tactic at the cost of 1 Grit.
 
 ### Pressure
 
-As an Engagement drags on, the enemy adapts and reinforces. This accumulated weight of fire is tracked as **Pressure**. At the end of each Exchange, **Pressure** increases by 1 (to a maximum of **TL+1**). 
+First contact is the worst of it. The enemy is set, sighted, and firing before the Squad can answer. That weight of fire is Pressure, and it only eases once the Squad takes the initiative.
 
-- Each point of Pressure imposes **-1 ATK** on the Squad.
-- Pressure reduces the Squad's total **ATK** pool before dice are allocated to targets.
-- Pressure can be targeted during Fire as a [[Hard Target]]. Each Hit reduces Pressure by 1.
-- Pressure resets between Engagements.
-- Reaching VICTORY routs the enemy and clears Pressure along with them.
+Pressure starts at [[TL]]. Each point imposes -1 ATK, removed from the Squad's total pool before dice are allocated to targets.
 
-### Pressure Overflow
-
-In TL 3 and TL 4 Engagements, Pressure caps at TL+1 as normal. When an Exchange ends and Pressure would increase past the cap, the increase converts to -1 DEF on a random Trooper for the next Defense Roll instead.
+- At the end of an [[Exchange]], if the Squad gained [[Momentum]], Pressure drops by 1.
+- The [[Flamethrower]] lowers Pressure through its own rules. It is the only weapon that can.
+- Pressure never falls below 0 or above [[TL]].
+- **Defensive Engagements**: Each new wave re-arms Pressure to [[TL]]. Hold the line and the weight comes back with every assault.
 
 ## The End of the Engagement
 

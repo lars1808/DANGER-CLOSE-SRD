@@ -6,7 +6,7 @@ A Trooper has the following variables to keep track of. Most of these only come 
 
 ## Status
 
-Current level of health of the Trooper. Ranges from [[OK]] to [[Grazed]] to [[Wounded]] to [[Bleeding Out]] to [[Dead]].
+Current level of health of the Trooper. Ranges from [[OK]] to [[Grazed]] to [[Wounded]] to [[Bleeding Out]] to Down (if stabilized in time) to [[Dead]].
 
 ## Gear
 

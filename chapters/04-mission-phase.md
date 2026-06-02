@@ -54,7 +54,9 @@ Then, roll {roll:2d6|Advance} and apply the modifiers.
 
 ### Offensive Position & Infiltration
 
-Each Trooper rolls an individual [[Mobility Check]]. If everyone passes their Mobility Check: The Squad bypasses the Sector entirely. No Engagement, no resources spent. Proceed to the next Sector. Narrate how you pass like ghost.
+Each Trooper rolls an individual [[Mobility Check]]. 
+
+If everyone **passes their Mobility Check** *and* **Stealth is still active**: The Squad bypasses the Sector entirely. No Engagement, no resources spent. Proceed to the next Sector. Narrate how you pass like ghost.
 
 If not everyone passes, first assign individual [[Offensive Position|Offensive Positions]]. Note that the [[Cover]]/[[Space ]]of the Sector might still limit how many Troopers can be [[Fortified]]/[[Flanking]].
 
