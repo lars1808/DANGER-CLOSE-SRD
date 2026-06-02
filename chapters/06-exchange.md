@@ -163,6 +163,8 @@ A Trooper's [[Status]] is either OK, Grazed, Wounded, Bleeding Out, Down or Dead
 
 A singe hit can never move a Trooper past Bleeding Out. Surplus Injuries are not counted.
 
+If a Trooper gains an Injury but remains standing (not Bleeding Out), they regain +1 [[Grit]].
+
 | Status       | Notes                                                        |
 | ------------ | ------------------------------------------------------------ |
 | OK           | All good                                                     |
