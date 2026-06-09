@@ -11,7 +11,7 @@ Spend Requisition between missions to equip Special Weapons, Special Gear, or be
 ## Mobility
 
 Each Trooper has a base Mobility of 5. Armor and gear reduce this value. Mobility is the target number for all 
-Mobility Checks: roll 1d6 equal or under to succeed. A Trooper with Mobility 0 automatically fails all Mobility Checks. Being wounded imposes -1 Mobility.
+Mobility Checks: roll 1d6 equal or under to succeed. A Trooper with Mobility 0 automatically fails all Mobility Checks. Being wounded fails all Mobility Checks.
 
 | Mobility | Flanking Bonus |
 | -------- | -------------- |

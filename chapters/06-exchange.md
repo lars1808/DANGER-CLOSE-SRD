@@ -121,7 +121,7 @@ If this Momentum gain pushes Momentum to VICTORY, make one final Defense Roll fo
 
 Gain +1 Momentum per 6 rolled, to a maximum of +2 Momentum this Exchange. Each 6 rolled beyond the cap removes 1 [[Pressure]] instead.
 
-If this Momentum gain pushes Momentum to VICTORY, the Engagement is won. If you obtain a Success you can also opt to **Hold Position** instead, as that might be beneficial during defense or extraction missions. 
+If this Momentum gain pushes Momentum to VICTORY, the Engagement is won. If you obtain a Success you can also opt to **Hold Position** instead (each Trooper +1 DEF), as that might be beneficial during defense or extraction missions. 
 
 If after the Offense Roll, Momentum is not at DEFEAT or VICTORY, the fight continues. The other effects of Momentum gain/loss are resolved after the Defense Roll.
 
@@ -161,9 +161,9 @@ The Defense Roll failed, bullets (or an equivalent) are hitting closer and close
 
 A Trooper's [[Status]] is either OK, Grazed, Wounded, Bleeding Out, Down or Dead. This works as a 'track'; 1 Injury when OK moves the Status to Grazed, taking 2 Injuries when Grazed moves the Trooper to Bleeding Out.
 
-A singe hit can never move a Trooper past Bleeding Out. Surplus Injuries are not counted.
+A single hit can never move a Trooper past Bleeding Out. Surplus Injuries are not counted.
 
-If a Trooper gains an Injury but remains standing (not Bleeding Out), they regain +1 [[Grit]].
+If a Trooper gains an Injury from Direct Fire but remains standing (not Bleeding Out), they regain +1 [[Grit]].
 
 | Status       | Notes                                                        |
 | ------------ | ------------------------------------------------------------ |
@@ -197,7 +197,7 @@ A Trooper that fails their Defense Roll can choose to become **Suppressed** inst
 
 A Suppressed Trooper is hugging dirt. Next Exchange, they can only **Move** (any kind) or **Interact**. No Fire, no Covering Fire, no Special Weapons, no Improvise.
 
-- Suppressed clears when the Trooper passes a [[Defense Roll]] or becomes [[Fortified]].
+- Suppressed clears when the Trooper passes a [[Defense Roll]] or at the end of any Exchange they spend  [[Fortified]].
 - Being or becoming Fortified clears Suppressed, but only after that Exchange's Offense Roll. The Trooper still loses their action for that Exchange.
 - A Suppressed Trooper who fails a second Defense Roll takes the Injury. They cannot Suppress out of it again.
 
@@ -226,18 +226,9 @@ The enemy doesn't wait for an opening. When the Squad slows, they push, and the 
 | 4-5  | **Press.** Every [[Flanking]] and [[Engaged]] Trooper drops one step of Defensive Position. |
 | 6    | **Overrun.** Every Trooper drops one step of Defensive Position. |
 
+If a Trooper is already at Flanked and still drops a step in Defensive Position, they get -1 DEF instead.
+
 Your Squad’s Sergeant, if not Bleeding Out or Suppressed, can nullify a Tactic at the cost of 1 Grit.
-
-### Pressure
-
-First contact is the worst of it. The enemy is set, sighted, and firing before the Squad can answer. That weight of fire is Pressure, and it only eases once the Squad takes the initiative.
-
-Pressure starts at [[TL]]. Each point imposes -1 ATK, removed from the Squad's total pool before dice are allocated to targets.
-
-- At the end of an [[Exchange]], if the Squad gained [[Momentum]], Pressure drops by 1.
-- The [[Flamethrower]] lowers Pressure through its own rules. It is the only weapon that can.
-- Pressure never falls below 0 or above [[TL]].
-- **Defensive Engagements**: Each new wave re-arms Pressure to [[TL]]. Hold the line and the weight comes back with every assault.
 
 ## The End of the Engagement
 

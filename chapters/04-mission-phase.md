@@ -112,12 +112,12 @@ Mobile Hard Targets, such as Tanks, Brutes, Elite Squads etc. have a 2-in-6 chan
 
 ### Failed  Fighting Withdrawal
 
-| Base TL | Pursuing TL | Remnant TL | Starting Pressure |
-| ------- | ----------- | ---------- | ----------------- |
-| 1       | 1           | 0          | 1                 |
-| 2       | 2           | 1          | 2                 |
-| 3       | 2           | 2          | 3                 |
-| 4       | 3           | 2          | 4                 |
+| Base TL | Pursuing TL | Remnant TL |
+| ------- | ----------- | ---------- |
+| 1       | 1           | 0          |
+| 2       | 2           | 1          |
+| 3       | 2           | 2          |
+| 4       | 3           | 2          |
 
 Mobile Hard Targets, such as Tanks, Brutes, Elite Squads etc. have a 4-in-6 chance of choosing to pursue.
 
@@ -139,7 +139,7 @@ The results of the Advance Roll are interpreted in the context of a retreat:
 
 Effects on Momentum and Defensive Positions are identical to the Advance Roll. Offensive Position is set by individual Mobility Checks, as normal.
 
-The Engagement begins immediately in the previous Sector with the Pursuing TL, the Momentum and Defensive Positions from the Retreat Roll, and any listed Starting Pressure already on the track.
+The Engagement begins immediately in the previous Sector with the Pursuing TL, the Momentum and Defensive Positions from the Retreat Roll.
 
 ### Falling Back Further
 

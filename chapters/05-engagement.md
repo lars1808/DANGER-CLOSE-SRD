@@ -1,6 +1,6 @@
 # Engagement
 
-An **Engagement** is a zoomed-in firefight: the squad locked in a battle that will decide who holds the field. It plays out in [[Exchange|Exchanges]] - rounds of combat. Besides stats such as Trooper health, we track two main elements: [[Momentum]] and Trooper Position.
+An **Engagement** is a zoomed-in firefight: the squad locked in a battle that will decide who holds the field. It plays out in [[Exchange|Exchanges]] - rounds of combat. Besides stats such as Trooper health, we track three main elements: [[Momentum]], [[Pressure]] and Trooper Position.
 
 ## Momentum
 
@@ -29,6 +29,20 @@ Engagements that revolve around defense follow normal Engagement/Momentum rules,
 
 **Extractions** last until the enemy breaks, or the exfil arrives. The exfil timer is set before the Engagement begins, ranging from 6 (quick) to 9 (long) Exchanges. Reprieve exchanges count as well. When the timer 
 expires, the Squad extracts as per the Disengage intent.
+
+### Pressure
+
+First contact is the worst of it. The enemy is set, sighted, and firing before the Squad can answer. That weight of fire is **Pressure**, and it only eases once the Squad takes the initiative.
+
+Pressure starts at [[TL]]. Each point imposes **-1 ATK**, removed from the Squad's total pool before dice are allocated to targets.
+
+- When the Squad gains [[Momentum]], Pressure drops by 1.
+- Surplus 6s on a [[Offense Roll|Success]] can strip Pressure (see [[Offense Roll]]).
+- The [[Flamethrower]] lowers Pressure through its own rules. It is the only weapon that can.
+- Pressure never falls below 0 or rises above its starting value.
+- **Defensive Engagements**: each new wave re-arms Pressure to [[TL]]. Hold the line and the weight comes back with every assault.
+
+Momentum says who is winning. Pressure says how hard the enemy is firing. The first you fight over. The second you grind down.
 
 ## Trooper position
 

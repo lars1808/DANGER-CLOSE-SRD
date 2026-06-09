@@ -14,8 +14,8 @@ window.GLOSSARY = {
     chapter: "the-squad"
   },
   "Status": {
-    def: "A Trooper's health track: OK → Grazed → Wounded → Bleeding Out → Dead.",
-    xref: ["Injury", "Trooper"],
+    def: "A Trooper's health track: OK → Grazed → Wounded → Bleeding Out → Dead. A Bleeding Out Trooper who is stabilized becomes Down instead of continuing down the track.",
+    xref: ["Injury", "Trooper", "Down"],
     chapter: "exchange",
     anchor: "injury"
   },
@@ -32,20 +32,26 @@ window.GLOSSARY = {
     anchor: "injury"
   },
   "Wounded": {
-    def: "Serious injury. Imposes −1 Mobility. Can only be healed through medical attention. Must sit out the next mission.",
-    xref: ["Status", "Grazed", "Bleeding Out", "Mobility"],
+    def: "Serious injury. Imposes −1 ATK and automatically fails all Mobility Checks. Can only be healed through medical attention. Must sit out the next mission.",
+    xref: ["Status", "Grazed", "Bleeding Out", "ATK", "Mobility Check"],
     chapter: "exchange",
     anchor: "injury"
   },
   "Bleeding Out": {
-    def: "Critical injury. The Trooper dies at the end of the next Exchange unless stabilized. Cannot take any actions.",
-    xref: ["Status", "Wounded", "Dead", "Interact"],
+    def: "Critical injury. The Trooper dies at the end of the next Exchange unless stabilized. Cannot take any actions. Once stabilized, becomes Down.",
+    xref: ["Status", "Wounded", "Dead", "Down", "Interact"],
     chapter: "exchange",
     anchor: "injury"
   },
   "Dead": {
     def: "KIA. The Trooper is permanently removed from the Squad.",
     xref: ["Status", "Bleeding Out"],
+    chapter: "exchange",
+    anchor: "injury"
+  },
+  "Down": {
+    def: "A Bleeding Out Trooper who has been stabilized. Out of action and cannot be targeted. Returns to Wounded once the Engagement ends.",
+    xref: ["Bleeding Out", "Wounded", "Status", "Interact"],
     chapter: "exchange",
     anchor: "injury"
   },
@@ -102,8 +108,14 @@ window.GLOSSARY = {
     chapter: "equipment-and-gear",
     anchor: "weapon-properties"
   },
+  "Flamethrower": {
+    def: "Special Weapon. The only weapon that can directly lower Pressure, via its own rules.",
+    xref: ["Weapon", "Pressure"],
+    chapter: "equipment-and-gear",
+    anchor: "weapon-properties"
+  },
 "Grit": {
-  def: "Expendable resource. Spend to re-roll a Move or Defense Roll die, or to boost an Advance Roll via Press the Advance. Recovered in-mission by surviving Direct Fire, downing Hard Targets, or pushing through to positive Momentum. Survivors gain +1 Grit after a mission (max 3).",
+  def: "Expendable resource. Spend to re-roll a Move or Defense Roll die, or to boost an Advance Roll via Press the Advance. Recovered in-mission by taking Direct Fire without going Suppressed, downing a Hard Target, or pushing Momentum into positive territory. Survivors gain +1 Grit after a mission (max 3).",
   xref: ["Mobility Check", "Defense Roll", "Press the Advance"],
   chapter: "the-squad"
 },
@@ -119,8 +131,8 @@ window.GLOSSARY = {
     anchor: "mobility"
   },
   "Mobility Check": {
-    def: "Roll 1d6 equal or under the Trooper's Mobility to succeed. Being wounded imposes −1.",
-    xref: ["Mobility", "Grit"],
+    def: "Roll 1d6 equal or under the Trooper's Mobility to succeed. Wounded Troopers automatically fail.",
+    xref: ["Mobility", "Grit", "Wounded"],
     chapter: "equipment-and-gear",
     anchor: "mobility"
   },
@@ -225,7 +237,7 @@ window.GLOSSARY = {
     anchor: "offensive-position--infiltration"
   },
   "Stealth": {
-    def: "+3 on the Advance Roll if the enemy is unaware of hostile presence. Lost on using Assault or rolling SPOTTED or worse.",
+    def: "+3 on the Advance Roll if the enemy is unaware of hostile presence. Lost on using Assault or rolling SPOTTED or worse. Bypassing a Sector entirely via Mobility Checks requires Stealth to still be active.",
     xref: ["Advance Roll", "Infiltration"],
     chapter: "mission-phase",
     anchor: "advance-roll"
@@ -361,8 +373,8 @@ window.GLOSSARY = {
   anchor: "suppressed"
 },
 "Pressure": {
-  def: "Accumulated enemy fire weight during an Engagement. Increases by 1 each Exchange (max TL+1). Each point imposes −1 ATK. Reduced by extra 6s on the Offense Roll past the Momentum cap, or by targeting as a Hard Target. At TL 3-4, overflow converts to -1 DEF on a random Trooper.",
-  xref: ["ATK", "Enemy Tactics", "Hard Target", "Pressure Overflow"],
+  def: "Enemy fire weight during an Engagement. Starts equal to the Sector's Threat Level. Each point imposes −1 ATK. Lowered by 1 each time the Squad gains Momentum, by extra 6s on the Offense Roll past the Momentum cap, or by the Flamethrower's unique rules.",
+  xref: ["ATK", "Momentum", "Flamethrower", "Enemy Tactics"],
   chapter: "exchange",
   anchor: "pressure"
 },
@@ -385,8 +397,8 @@ window.GLOSSARY = {
     anchor: "injury"
   },
 "Enemy Tactics": {
-  def: "End-of-Exchange roll: 1d6 + Threat Level. Triggers Reposition, Scatter, Pinned Down, Encircle, Push Forward, or Fall Back. Sergeant can nullify with 1 Grit.",
-  xref: ["Exchange", "Threat Level", "Grit", "Pressure"],
+  def: "End-of-Exchange check: roll 1d6. If the result is equal to or under the Sector's Threat Level, the enemy acts. Roll 1d6 again to resolve: 1–3 Push, 4–5 Press, 6 Overrun the Squad's Defensive Positions.",
+  xref: ["Exchange", "Threat Level", "Defensive Position", "Pressure"],
   chapter: "exchange",
   anchor: "enemy-tactics"
 },
@@ -499,6 +511,8 @@ window.GLOSSARY_ALIASES = {
   "wounded": "Wounded",
   "bleeding out": "Bleeding Out",
   "dead": "Dead",
+  "down": "Down",
+  "flamethrower": "Flamethrower",
   "limited": "Limited",
   "engaged": "Engaged",
   "flanking": "Flanking",
