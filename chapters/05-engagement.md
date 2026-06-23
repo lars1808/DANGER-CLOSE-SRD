@@ -90,5 +90,5 @@ Similarly, the Sector's [[Space]] value determines the space Troopers have for o
 At the start of the Engagement, check the terrain for tactical asymmetry:
 
 - **+1 ATK each Exchange** if the Squad holds a clear advantage the enemy doesn't share: elevation, more cover than the enemy, fortifications, better sightlines.
-- **1 ATK each Exchange** if the enemy holds that advantage and it can't be easily overcome (entrenched positions, high ground, fighting uphill into prepared defenses).
+- **-1 ATK each Exchange** if the enemy holds that advantage and it can't be easily overcome (entrenched positions, high ground, fighting uphill into prepared defenses).
 - **No modifier** if neither side has a clear edge, or both stumbled into the fight on equal ground.

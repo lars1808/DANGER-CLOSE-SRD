@@ -93,7 +93,7 @@ Pool all ATK from the Squad and roll that many d6s. Take the highest value.
 - Add **+1 ATK** if a Trooper died last Exchange.
 - Subtract -**ATK** equal to the current **[[Pressure]]**.
 - Add or subtract **ATK** for [[Tactical Asymmetry]].
-- If the pool is 0 ATK, roll {roll:2d6kl1|0 ATK pool} and take the lowest. Success at a Cost is not available at 0 ATK.
+- If the pool is 0 ATK, roll {roll:2d6kl1} and take the lowest. Success at a Cost is not available at 0 ATK.
 
 | Offense Roll Result | Outcome |
 | ------------------- | ------- |
@@ -169,7 +169,7 @@ If a Trooper gains an Injury from Direct Fire but remains standing (not Bleeding
 | ------------ | ------------------------------------------------------------ |
 | OK           | All good                                                     |
 | Grazed       | Restored to OK when Catching Breath                          |
-| Wounded      | Can only be healed through medical attention. -1 ATK, fails all Mobility Checks. |
+| Wounded      | Can only be healed through medical attention. Fails all Mobility Checks. |
 | Bleeding Out | Dies at the end of next Exchange unless stabilized. Cannot take actions. |
 | Down         | Stabilized, but otherwise out of action. Not targeted in normal combat. Returns to Wounded once the Engagement ends. |
 | Dead         | KIA                                                          |

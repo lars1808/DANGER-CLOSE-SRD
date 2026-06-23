@@ -18,7 +18,7 @@ An expendable resource that allows a Trooper to push through. Can be used to re-
 
 - A Trooper taking Direct Fire, not going Suppressed, and remaining standing afterward (Grazed or Wounded). Regain 1 Grit.
 - The Squad taking down a [[Hard Target]]. Choose one Trooper that regains 1 Grit.
-- The Squad crosses from negative or 0 Momentum into +1 or higher. Choose one Trooper that regains 1 Grit.
+- The Squad crosses from CONTESTED or worse into GAINING GROUND or better. Choose one Trooper that regains 1 Grit.
 
 If a Trooper survives a Mission, they replenish their Grit and gain +1 (to maximum 3).
 
