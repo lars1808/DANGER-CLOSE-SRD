@@ -8,7 +8,7 @@ window.TOC = [
   { id: "the-squad",          title: "The Squad",           file: "chapters/01-the-squad.md" },
   { id: "the-mission",        title: "The Mission",         file: "chapters/02-the-mission.md" },
   { id: "sectors",        title: "Sectors",             file: "chapters/03-sectors.md" },
-  { id: "mission-phase",      title: "Mission Phase",       file: "chapters/04-mission-phase.md" },
+  { id: "advancing-retreating",      title: "Advancing & Retreating",       file: "chapters/04-advancing-retreating.md" },
   { id: "engagement",         title: "Engagement",          file: "chapters/05-engagement.md" },
   { id: "exchange",           title: "Exchange",            file: "chapters/06-exchange.md" },
   { id: "hard-targets",       title: "Hard Targets",        file: "chapters/07-hard-targets.md" },

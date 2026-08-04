@@ -5,81 +5,123 @@
 window.GLOSSARY = {
   "Squad": {
     def: "A unit of 5 Troopers under the player's command. The core tactical element of DANGER CLOSE.",
-    xref: ["Trooper", "Mission"],
+    xref: ["Trooper", "Mission", "Sergeant"],
     chapter: "the-squad"
   },
   "Trooper": {
-    def: "A single soldier. Has Status, Gear, Grit, Ammo, and Mobility. Five of them make a Squad.",
-    xref: ["Squad", "Status", "Grit", "Ammo", "Mobility"],
+    def: "A single soldier. Has Gear, Grit, Ammo, Mobility, Injuries, and a Tag. Five of them make a Squad.",
+    xref: ["Squad", "Grit", "Ammo", "Mobility", "Injury", "Tags"],
     chapter: "the-squad"
   },
-  "Status": {
-    def: "A Trooper's health track: OK → Grazed → Wounded → Bleeding Out → Dead. A Bleeding Out Trooper who is stabilized becomes Down instead of continuing down the track.",
-    xref: ["Injury", "Trooper", "Down"],
-    chapter: "exchange",
-    anchor: "injury"
+  "Sergeant": {
+    def: "One Trooper designated as the Squad's leader. Spend 1 Grit to nullify an Enemy Tactic. Cannot do this while Bleeding Out or Suppressed.",
+    xref: ["Squad", "Grit", "Enemy Tactics"],
+    chapter: "the-squad",
+    anchor: "the-sergeant"
   },
-  "OK": {
-    def: "Default Trooper Status. No injuries, fully combat-effective.",
-    xref: ["Status", "Grazed"],
-    chapter: "exchange",
-    anchor: "injury"
+  "Grit": {
+    def: "Expendable resource. Spend 1 to reroll a Mobility Check, one d6 of a Defense Roll, or a Death Save. Troopers start with 1 Grit (capacity 1); capacity rises by 1 per mission survived, up to a max of 3, and refills between missions. Recovered in the field when a Hard Target goes down or the Offense Roll runs hot past the Momentum cap.",
+    xref: ["Mobility Check", "Defense Roll", "Death Save", "Hard Target", "Offense Roll"],
+    chapter: "the-squad",
+    anchor: "grit"
   },
-  "Grazed": {
-    def: "Minor injury. Restored to OK when Catching Breath. No mechanical penalty.",
-    xref: ["Status", "OK", "Wounded"],
-    chapter: "exchange",
-    anchor: "injury"
+  "Ammo": {
+    def: "Abstracted munitions. Troopers start with 3 (max 3). Spend to fire Special Weapons, add +1 ATK, declare Assault Posture, or Pour It On.",
+    xref: ["Trooper", "ATK", "Assault Posture", "Pour It On"],
+    chapter: "the-squad",
+    anchor: "ammo"
   },
-  "Wounded": {
-    def: "Serious injury. Imposes −1 ATK and automatically fails all Mobility Checks. Can only be healed through medical attention. Must sit out the next mission.",
-    xref: ["Status", "Grazed", "Bleeding Out", "ATK", "Mobility Check"],
+  "Mobility": {
+    def: "Base 4, lowered by selected armor, weapons and gear. Target number for all Mobility Checks (roll 1d6 equal or under). Each 2 Injuries lower Mobility by 1. Also sets the Flanking Bonus.",
+    xref: ["Mobility Check", "Armor", "Flanking Bonus", "Injury"],
+    chapter: "equipment-and-gear",
+    anchor: "mobility"
+  },
+  "Mobility Check": {
+    def: "Roll 1d6 equal or under the Trooper's Mobility to succeed. A Trooper at Mobility 0 automatically fails.",
+    xref: ["Mobility", "Grit"],
+    chapter: "equipment-and-gear",
+    anchor: "mobility"
+  },
+  "Flanking Bonus": {
+    def: "ATK bonus when Flanking, set by Mobility: +1 at Mobility 0-3, +2 at Mobility 4, +3 at Mobility 5.",
+    xref: ["Mobility", "Flanking", "Fire"],
+    chapter: "equipment-and-gear",
+    anchor: "mobility"
+  },
+  "Tags": {
+    def: "A Trooper's personality descriptor: Forceful, Technical, Steady, or Sharp. Answers the Skill question in a Trooper Roll and guides roleplay outside a firefight.",
+    xref: ["Trooper", "Trooper Roll"],
+    chapter: "the-squad",
+    anchor: "tags"
+  },
+  "Injury": {
+    def: "Troopers have no hit points. Each hit that calls for one adds Injuries to a running tally, and the tally sets the odds the next hit puts the Trooper down. Each 2 Injuries lower Mobility by 1. A hit that could plausibly kill outright also calls for a Death Save.",
+    xref: ["Death Save", "Bleeding Out", "Mobility", "Trooper"],
     chapter: "exchange",
-    anchor: "injury"
+    anchor: "injury--death"
+  },
+  "Death Save": {
+    def: "Roll 1d6 against a Trooper's current Injury tally. A result greater than the tally means the Trooper stays in the fight; a 6 always holds. Otherwise the Trooper is Bleeding Out. Called for whenever the source of Injury could plausibly kill outright; lighter sources raise the tally without a roll.",
+    xref: ["Injury", "Bleeding Out", "Grit"],
+    chapter: "exchange",
+    anchor: "injuries--the-death-save"
   },
   "Bleeding Out": {
-    def: "Critical injury. The Trooper dies at the end of the next Exchange unless stabilized. Cannot take any actions. Once stabilized, becomes Down.",
-    xref: ["Status", "Wounded", "Dead", "Down", "Interact"],
+    def: "A Trooper who failed a Death Save. Cannot take actions and dies at the end of the next Exchange unless Stabilized. May instead declare a Last Stand.",
+    xref: ["Death Save", "Stabilized", "Last Stand", "Dead"],
     chapter: "exchange",
-    anchor: "injury"
+    anchor: "bleeding-out--stabilize"
+  },
+  "Stabilized": {
+    def: "A Bleeding Out Trooper who was aided by an Interact. Out of the fight and out of danger: takes no actions and isn't targeted by normal enemy fire. Returns to the fight with Injuries intact once the Engagement ends.",
+    xref: ["Bleeding Out", "Interact"],
+    chapter: "exchange",
+    anchor: "bleeding-out--stabilize"
   },
   "Dead": {
-    def: "KIA. The Trooper is permanently removed from the Squad.",
-    xref: ["Status", "Bleeding Out"],
+    def: "KIA. Occurs when a Bleeding Out Trooper isn't Stabilized in time, when a Bleeding Out or Stabilized Trooper is hit by something big in the fiction, or when the Engagement is lost while they're out of action. Permanently removed from the Squad.",
+    xref: ["Bleeding Out", "Stabilized"],
     chapter: "exchange",
-    anchor: "injury"
+    anchor: "death"
   },
-  "Down": {
-    def: "A Bleeding Out Trooper who has been stabilized. Out of action and cannot be targeted. Returns to Wounded once the Engagement ends.",
-    xref: ["Bleeding Out", "Wounded", "Status", "Interact"],
+  "Last Stand": {
+    def: "A Bleeding Out Trooper goes out fighting instead of waiting for help. Declared the moment it happens; they die after acting. Choose +4 ATK to this Exchange's Offense Roll, or an immediate Squad Disengage with no Injury rolls for anyone, including Troopers who already failed one.",
+    xref: ["Bleeding Out", "Offense Roll", "Disengage"],
     chapter: "exchange",
-    anchor: "injury"
+    anchor: "last-stand"
+  },
+  "Suppressed": {
+    def: "Chosen instead of taking Injuries on a failed Defense Roll, if not already Suppressed. A Flanked Trooper cannot go Suppressed. Limits the next Exchange to Move or Interact only. Clears on a passed Defense Roll or at the end of an Exchange spent Fortified. A second failed Defense Roll while Suppressed takes the full Injury.",
+    xref: ["Defense Roll", "Fortified", "Injury", "Flanked"],
+    chapter: "exchange",
+    anchor: "suppressed"
   },
   "Gear": {
-    def: "A Trooper's equipped Armor and Weapon. Can be default issue or specialized.",
-    xref: ["Armor", "Weapon"],
+    def: "A Trooper's equipped Armor, Weapon, and any Special Weapon or Special Equipment. What makes one Trooper different from another, and what slows them down.",
+    xref: ["Armor", "Weapon", "Mobility"],
     chapter: "equipment-and-gear"
   },
   "Armor": {
-    def: "Light, Medium or Heavy. Modifies final DEF result and carries a Mobility cost.",
+    def: "Light, Medium or Heavy. Modifies the final Defense Roll result and carries a Mobility cost.",
     xref: ["Defense Roll", "Mobility"],
     chapter: "equipment-and-gear",
     anchor: "armor"
   },
   "Light Armor": {
-    def: "−1 to final DEF result. No Mobility cost. Favors speed over protection.",
+    def: "-1 to the final Defense Roll result. +1 Mobility. Favors speed over protection.",
     xref: ["Armor", "Defense Roll", "Mobility"],
     chapter: "equipment-and-gear",
     anchor: "armor"
   },
   "Medium Armor": {
-    def: "No DEF modifier. −1 Mobility cost. The default loadout.",
+    def: "No DEF modifier, no Mobility change. The default loadout.",
     xref: ["Armor", "Defense Roll", "Mobility"],
     chapter: "equipment-and-gear",
     anchor: "armor"
   },
   "Heavy Armor": {
-    def: "+1 to final DEF result. −2 Mobility cost. Maximum protection at the cost of maneuverability.",
+    def: "+1 to the final Defense Roll result. -1 Mobility. Maximum protection at the cost of maneuverability.",
     xref: ["Armor", "Defense Roll", "Mobility"],
     chapter: "equipment-and-gear",
     anchor: "armor"
@@ -91,7 +133,7 @@ window.GLOSSARY = {
     anchor: "weapon-properties"
   },
   "Carbine": {
-    def: "+1 ATK when Engaged in Tight battlefields. −1 ATK when Engaged in Open battlefields.",
+    def: "+1 ATK when Engaged in Tight Space. -1 ATK when Engaged in Open Space.",
     xref: ["Weapon", "Assault Rifle", "Marksman Rifle"],
     chapter: "equipment-and-gear",
     anchor: "weapon-properties"
@@ -103,164 +145,263 @@ window.GLOSSARY = {
     anchor: "weapon-properties"
   },
   "Marksman Rifle": {
-    def: "+1 ATK when Engaged in Exposed battlefields. −1 ATK when Engaged in Dense battlefields.",
+    def: "+1 ATK when Engaged in Exposed Cover. -1 ATK when Engaged in Dense Cover.",
     xref: ["Weapon", "Carbine", "Assault Rifle"],
     chapter: "equipment-and-gear",
     anchor: "weapon-properties"
   },
   "Flamethrower": {
-    def: "Special Weapon. The only weapon that can directly lower Pressure, via its own rules.",
-    xref: ["Weapon", "Pressure"],
+    def: "Special Weapon. Spend 1 Ammo to reduce Pressure instead of contributing ATK: -3 in Tight Space, -2 in Transitional Space, -1 in Open Space. The only weapon that can lower Pressure directly.",
+    xref: ["Weapon", "Pressure", "Ammo"],
     chapter: "equipment-and-gear",
-    anchor: "weapon-properties"
+    anchor: "flamethrower"
   },
-"Grit": {
-  def: "Expendable resource. Spend to re-roll a Move or Defense Roll die, or to boost an Advance Roll via Press the Advance. Recovered in-mission by taking Direct Fire without going Suppressed, downing a Hard Target, or pushing Momentum into positive territory. Survivors gain +1 Grit after a mission (max 3).",
-  xref: ["Mobility Check", "Defense Roll", "Press the Advance"],
-  chapter: "the-squad"
-},
-  "Ammo": {
-    def: "Abstracted munitions. Troopers start with 3 (max 3). Spend to boost attacks or fire Special Weapons.",
-    xref: ["Trooper"],
-    chapter: "the-squad"
-  },
-  "Mobility": {
-    def: "Base 5, reduced by armor/gear. Target number for all Mobility Checks (roll 1d6 equal or under).",
-    xref: ["Mobility Check", "Armor", "Flanking Bonus"],
+  "Requisition": {
+    def: "Measures the Squad's access to rare gear. Gain 1 per surviving Trooper after each mission. Spend between missions on Special Weapons, Special Equipment, or better Armor; costs are listed as [REQ X].",
+    xref: ["Gear", "Squad"],
     chapter: "equipment-and-gear",
-    anchor: "mobility"
-  },
-  "Mobility Check": {
-    def: "Roll 1d6 equal or under the Trooper's Mobility to succeed. Wounded Troopers automatically fail.",
-    xref: ["Mobility", "Grit", "Wounded"],
-    chapter: "equipment-and-gear",
-    anchor: "mobility"
-  },
-  "Flanking Bonus": {
-    def: "ATK bonus when Flanking, determined by Mobility. +1 ATK at Mobility 0–3, +2 at Mobility 4, +3 at Mobility 5.",
-    xref: ["Mobility", "Flanking", "Fire"],
-    chapter: "equipment-and-gear",
-    anchor: "mobility"
-  },
-  "Tags": {
-    def: "A Trooper's personality descriptor: Forceful, Technical, Steady, or Sharp. Guides roleplay and non-combat problem solving.",
-    xref: ["Trooper"],
-    chapter: "the-squad",
-    anchor: "tags"
+    anchor: "requisition"
   },
   "Mission": {
-    def: "An effort to achieve one or more Objectives across multiple Sectors, starting at an LZ.",
-    xref: ["Objective", "Sector", "Threat Level"],
+    def: "An effort to achieve one or more Objectives across multiple Sectors, starting at a Landing Zone (LZ) and ending at the LZ or a separate Extraction Zone (EZ).",
+    xref: ["Objective", "Sector", "Threat Level", "Difficulty"],
     chapter: "the-mission"
   },
   "Objective": {
-    def: "What the mission is for: Seize & Secure, Hit & Run, Free Roam, or Defensive.",
+    def: "What the mission is for: Capture, Destroy, Neutralize, Extract, Recover, Disrupt, or Hold, depending on Mission Type.",
     xref: ["Mission"],
     chapter: "the-mission",
     anchor: "mission-objective"
   },
+  "Difficulty": {
+    def: "A Mission's set difficulty, capping the maximum Threat Level of Sectors encountered: Routine (max TL 2), Hazardous (max TL 3), or Desperate (max TL 4).",
+    xref: ["Threat Level", "Mission"],
+    chapter: "the-mission",
+    anchor: "difficulty-threat-level"
+  },
+  "Threat Level": {
+    def: "The strength of enemy forces in a Sector, 1 (Light) to 4 (Overwhelming). Drives Injury severity, the odds of Enemy Tactics, and how badly a bad Contact or Threat Roll can degrade. Relative to the Squad, not an objective measure of enemy strength.",
+    xref: ["Sector", "Mission", "Injury", "Enemy Tactics", "Difficulty"],
+    chapter: "the-mission",
+    anchor: "difficulty-threat-level"
+  },
+  "Airspace": {
+    def: "Who currently holds air superiority: Clear, Contested, or Hostile. Sets the odds of the Squad's transport taking fire en route to a mission or on extraction.",
+    xref: ["Mission"],
+    chapter: "the-mission",
+    anchor: "airspace"
+  },
   "Sector": {
     def: "A distinct location visited during a mission. Defined by Cover, Space and Threat Level.",
     xref: ["Cover", "Space", "Threat Level"],
-    chapter: "the-mission",
-    anchor: "sectors"
+    chapter: "sectors"
   },
   "Cover": {
-    def: "How much physical protection a Sector offers. 0 — Exposed, 1 — Normal, 2 — Dense. Limits how many Troopers can be Fortified.",
+    def: "How much physical protection a Sector offers. 0 - Exposed, 1 to 4 - Normal, 5 - Dense. Limits how many Troopers can be Fortified.",
     xref: ["Space", "Sector", "Fortified"],
-    chapter: "the-mission",
+    chapter: "sectors",
     anchor: "cover"
   },
   "Exposed Cover": {
     def: "Cover 0. No real cover. No Troopers can be Fortified.",
     xref: ["Cover", "Normal Cover", "Dense Cover"],
-    chapter: "the-mission",
+    chapter: "sectors",
     anchor: "cover"
   },
-"Normal Cover": {
-  def: "Cover 1. Scattered cover. 1d4 Troopers can be Fortified, rolled when the Squad first enters the Sector.",
-  xref: ["Cover", "Exposed Cover", "Dense Cover"],
-  chapter: "the-mission",
-  anchor: "cover"
-},
+  "Normal Cover": {
+    def: "Scattered cover. 1d4 Troopers can be Fortified, rolled when the Squad first enters the Sector.",
+    xref: ["Cover", "Exposed Cover", "Dense Cover"],
+    chapter: "sectors",
+    anchor: "cover"
+  },
   "Dense Cover": {
-    def: "Cover 2. Rubble, solid walls, barricades. No limit on Fortified Troopers.",
+    def: "Cover 5. Rubble, solid walls, barricades. Up to 5 Troopers can be Fortified.",
     xref: ["Cover", "Exposed Cover", "Normal Cover"],
-    chapter: "the-mission",
+    chapter: "sectors",
     anchor: "cover"
   },
   "Space": {
-    def: "How open a Sector is. 0 — Tight, 1 — Transitional, 2 — Open. Limits how many Troopers can Flank.",
+    def: "How open a Sector is. Tight, Transitional, or Open. Limits how many Troopers can Flank.",
     xref: ["Cover", "Sector", "Flanking"],
-    chapter: "the-mission",
+    chapter: "sectors",
     anchor: "space"
   },
   "Tight Space": {
-    def: "Space 0. Tunnels, narrow corridors, trenches. No Troopers can be Flanking.",
+    def: "Tunnels, narrow corridors, trenches. No Troopers can be Flanking.",
     xref: ["Space", "Transitional Space", "Open Space"],
-    chapter: "the-mission",
+    chapter: "sectors",
     anchor: "space"
   },
-"Transitional Space": {
-  def: "Space 1. Courtyards, broken streets, alleyways. 1d4 Troopers can be Flanking, rolled when the Squad first enters the Sector.",
-  xref: ["Space", "Tight Space", "Open Space"],
-  chapter: "the-mission",
-  anchor: "space"
-},
+  "Transitional Space": {
+    def: "Courtyards, broken streets, alleyways, scattered ruins. 1d4 Troopers can be Flanking, rolled when the Squad first enters the Sector.",
+    xref: ["Space", "Tight Space", "Open Space"],
+    chapter: "sectors",
+    anchor: "space"
+  },
   "Open Space": {
-    def: "Space 2. Plazas, squares, promenades, fields. No limit on Flanking Troopers.",
+    def: "Plazas, squares, promenades, fields. Up to 5 Troopers can be Flanking.",
     xref: ["Space", "Tight Space", "Transitional Space"],
-    chapter: "the-mission",
+    chapter: "sectors",
     anchor: "space"
   },
-  "Threat Level": {
-    def: "The strength of enemy forces, 1 (Light) to 4 (Overwhelming). Drives injury severity and Enemy Tactics.",
-    xref: ["Mission", "Sector"],
-    chapter: "the-mission",
-    anchor: "difficulty"
+  "Sector Contents": {
+    def: "Roll 1d6 on entering a Sector to see what's waiting: Threat, Challenge, Sign, Nothing, or Boon. Roll 2d6 keep highest behind the lines, 1d6 on contested ground, or 2d6 keep lowest in the teeth of it.",
+    xref: ["Threat Level", "Challenge", "Sign", "Boon"],
+    chapter: "sectors",
+    anchor: "sector-contents"
   },
-  "Mission Phase": {
-    def: "Moving between Sectors: Advance!, Retreat!, Catch Breath.",
-    xref: ["Advance Roll", "Sector", "Retreat"],
-    chapter: "mission-phase"
+  "Challenge": {
+    def: "A problem caused by terrain, environment, the mission, or the people in the area. Not an Engagement, though failure may create one. Resolved with Oracle Dice, a Trooper Roll, or a Squad Roll.",
+    xref: ["Oracle Dice", "Trooper Roll", "Squad Roll", "Sector Contents"],
+    chapter: "sectors",
+    anchor: "challenge"
   },
-  "Advance Roll": {
-    def: "2d6 + modifiers when entering a threatened Sector. Determines starting Momentum and Defensive Positions.",
-    xref: ["Mission Phase", "Momentum", "Stealth", "Infiltration"],
-    chapter: "mission-phase",
-    anchor: "advance-roll"
+  "Sign": {
+    def: "A Sector Contents result: the Sector itself is empty, but something tells the Squad what lies ahead. A Sign is information the Squad has to act on, not information handed to them.",
+    xref: ["Sector Contents"],
+    chapter: "sectors",
+    anchor: "sign"
   },
-  "Infiltration": {
-    def: "When Stealth is active and not all Mobility Checks pass, each 2 successes lets you pick a bonus: Cut Comms, Target Commanders, Trap, or Exit Route.",
-    xref: ["Stealth", "Advance Roll", "Mobility Check"],
-    chapter: "mission-phase",
-    anchor: "offensive-position--infiltration"
+  "Boon": {
+    def: "A Sector Contents result: light resistance and something worth having. Roll on the Boon Table for effects like extra Ammo, Advance intel, or Attached Forces.",
+    xref: ["Sector Contents", "Attached Forces"],
+    chapter: "sectors",
+    anchor: "boon-table"
+  },
+  "Trooper Roll": {
+    def: "Resolves a task for a single Trooper by asking three questions: Time, Context, and Skill (their Tag). Count the yeses: 3 means it just works, 2 means roll the Oracle Die with the missing element as the stake, 1 or fewer means it isn't happening.",
+    xref: ["Tags", "Oracle Dice"],
+    chapter: "introduction",
+    anchor: "trooper-roll"
+  },
+  "Squad Roll": {
+    def: "Resolves a scene the Squad attempts together (patrols, cordons, standoffs, crowd control) by asking four questions: Time, Ground, Read, Kit. Roll 1d6 plus 1d6 per 'yes', take the highest. 6 resolves cleanly, 4-5 succeeds at a cost, 1-3 loses control.",
+    xref: ["Trooper Roll", "Oracle Dice"],
+    chapter: "introduction",
+    anchor: "squad-roll"
+  },
+  "Oracle Dice": {
+    def: "Roll 1d6 for a 50/50 question when the fiction demands an answer and no rule covers it. 2d6 keep lowest for Unlikely outcomes, 2d6 keep highest for Likely outcomes.",
+    xref: ["Improvise", "Trooper Roll", "Squad Roll"],
+    chapter: "introduction",
+    anchor: "oracle-dice"
+  },
+  "Advance": {
+    def: "The default state between Sectors: pushing toward the Objective. A Sector without a Threat costs nothing to cross. A Sector with a Threat calls for a declared Posture, then a Contact Roll and a Threat Roll before the Engagement begins.",
+    xref: ["Posture", "Contact Roll", "Threat Roll", "Engagement", "Retreat", "Catch Breath"],
+    chapter: "advancing-retreating",
+    anchor: "advance"
+  },
+  "Posture": {
+    def: "A Squad's declared approach before rolling Contact, locked in before the dice hit the table: Bounding (default), Assault Posture (2 Ammo, breaks Stealth), or Stealth (requires Stealth to be active).",
+    xref: ["Bounding", "Assault Posture", "Stealth", "Contact Roll"],
+    chapter: "advancing-retreating",
+    anchor: "declare-your-posture"
+  },
+  "Bounding": {
+    def: "The default Posture. Dispersed, weapons up, moving by bounds. No cost, no bonus.",
+    xref: ["Posture", "Contact Roll"],
+    chapter: "advancing-retreating",
+    anchor: "declare-your-posture"
+  },
+  "Assault Posture": {
+    def: "A Posture that trades the quiet approach for shock. Costs 2 Ammo to declare and breaks Stealth. Enables Pour It On after the Contact and Threat Rolls.",
+    xref: ["Posture", "Pour It On", "Stealth"],
+    chapter: "advancing-retreating",
+    anchor: "declare-your-posture"
   },
   "Stealth": {
-    def: "+3 on the Advance Roll if the enemy is unaware of hostile presence. Lost on using Assault or rolling SPOTTED or worse. Bypassing a Sector entirely via Mobility Checks requires Stealth to still be active.",
-    xref: ["Advance Roll", "Infiltration"],
-    chapter: "mission-phase",
-    anchor: "advance-roll"
+    def: "The enemy is unaware of the Squad's presence. Active at mission start by default. Broken by declaring Assault Posture, fighting an Engagement, or rolling SPOTTED while in Stealth Posture. Enables Infiltration and Stealth picks on a strong Contact Roll.",
+    xref: ["Posture", "Infiltration", "Contact Roll"],
+    chapter: "advancing-retreating",
+    anchor: "declare-your-posture"
+  },
+  "Edge": {
+    def: "A ±1 modifier checked once when the Squad enters a Sector: does one side hold an equipment or training advantage for the specific conditions in play? +1 if the Squad does, -1 if the enemy does, 0 otherwise. Modifies the Contact Roll directly, then carries into the Engagement as ±1 ATK each Exchange until conditions change.",
+    xref: ["Contact Roll", "ATK", "Engagement"],
+    chapter: "advancing-retreating",
+    anchor: "the-edge"
+  },
+  "Contact Roll": {
+    def: "1d6, modified by the Edge, read against the Squad's Posture to produce AMBUSHED, SPOTTED, SURPRISE, or (on an Assault) OVERWHELM. Sets starting Momentum and every Trooper's Offensive and Defensive Position. A Threat Roll made alongside it can degrade the result.",
+    xref: ["Posture", "Edge", "Threat Roll", "Momentum"],
+    chapter: "advancing-retreating",
+    anchor: "contact-roll"
+  },
+  "Threat Roll": {
+    def: "1d6 rolled against the Threat Level (during an Advance) or Base TL (during a Retreat). At or under that number, the enemy presses: the Contact Roll or Withdrawal result is reduced by the difference, or by 1 if the values are equal. Modified by Fatigue.",
+    xref: ["Contact Roll", "Withdrawal", "Fatigue", "Threat Level"],
+    chapter: "advancing-retreating",
+    anchor: "threat-roll"
+  },
+  "Fatigue": {
+    def: "-1 to the Threat Roll for every 3 Advances or Retreats made this mission.",
+    xref: ["Threat Roll"],
+    chapter: "advancing-retreating",
+    anchor: "threat-roll"
+  },
+  "Pour It On": {
+    def: "After the Contact Roll and Threat Roll are resolved, a Squad performing an Assault Posture may spend 2 Ammo per +1 to raise the final Contact Roll result. Declare and spend together; the new result is final.",
+    xref: ["Assault Posture", "Contact Roll", "Ammo"],
+    chapter: "advancing-retreating",
+    anchor: "threat-roll"
+  },
+  "Infiltration": {
+    def: "If the Contact Roll result is SURPRISE and every Trooper passes their Mobility Check in Stealth Posture, the Squad bypasses the Sector entirely. No Engagement, and Stealth holds.",
+    xref: ["Stealth", "Contact Roll", "Mobility Check"],
+    chapter: "advancing-retreating",
+    anchor: "stealth-mobility-checks"
   },
   "Retreat": {
-    def: "The Squad falls back to the previous Sector. The enemy may pursue with split forces.",
-    xref: ["Mission Phase", "Disengage", "Momentum"],
-    chapter: "mission-phase",
+    def: "The Squad falls back to the previous Sector, chosen or forced at DEFEAT. Declare Break Contact or Fighting Withdrawal, then every Trooper makes a Mobility Check to determine the Squad's Withdrawal, which a Threat Roll against Base TL can degrade.",
+    xref: ["Break Contact", "Fighting Withdrawal", "Withdrawal", "Threat Roll", "Disengage"],
+    chapter: "advancing-retreating",
     anchor: "retreat"
   },
-  "Engagement": {
-    def: "A zoomed-in firefight to clear a Sector. Played out in Exchanges until VICTORY or DEFEAT.",
-    xref: ["Exchange", "Momentum"],
-    chapter: "engagement"
+  "Break Contact": {
+    def: "A Retreat maneuver: get out clean, betting on speed and a broken line of sight.",
+    xref: ["Retreat", "Withdrawal"],
+    chapter: "advancing-retreating",
+    anchor: "declare-your-maneuver"
   },
-  "Exchange": {
-    def: "One round of an Engagement: Intent → Offense Roll → Defense Roll → Momentum → Enemy Tactics.",
-    xref: ["Engagement", "Offense Roll", "Defense Roll"],
-    chapter: "exchange"
+  "Fighting Withdrawal": {
+    def: "A Retreat maneuver: peel pursuers off and draw them onto chosen ground. Fights on the Squad's terms; a strong result can annihilate the pursuit, a weak one can bite off more than the Squad can chew.",
+    xref: ["Retreat", "Withdrawal"],
+    chapter: "advancing-retreating",
+    anchor: "declare-your-maneuver"
+  },
+  "Withdrawal": {
+    def: "The count of passed Mobility Checks during a Retreat, read against the declared maneuver to produce DISORDERLY, HARRIED, CLEAN BREAK, CONTROLLED, or KILL FUNNEL. Degraded by the Retreat's Threat Roll against Base TL.",
+    xref: ["Retreat", "Break Contact", "Fighting Withdrawal", "Mobility Check"],
+    chapter: "advancing-retreating",
+    anchor: "retreat-rolls"
+  },
+  "Catch Breath": {
+    def: "The state after clearing or finding an empty Sector. Lets a Trooper use Medic Gear to treat Injuries or redistribute Ammo from a Supply Backpack, plus narrative moments, before the next Advance.",
+    xref: ["Advance", "Injury"],
+    chapter: "advancing-retreating",
+    anchor: "catch-breath"
+  },
+  "Engagement": {
+    def: "A zoomed-in firefight to clear a Sector, opened by a Contact Roll or a Retreat. Played out in Exchanges until VICTORY or DEFEAT. Tracks Momentum, Pressure, and each Trooper's Position.",
+    xref: ["Exchange", "Momentum", "Pressure", "Offensive Position", "Defensive Position"],
+    chapter: "engagement"
   },
   "Momentum": {
     def: "The Squad's control of the battlefield. Track: DEFEAT, FALTERING, LOSING GROUND, CONTESTED, GAINING GROUND, BREAKING THROUGH, VICTORY.",
     xref: ["Engagement", "Offense Roll"],
+    chapter: "engagement",
+    anchor: "momentum"
+  },
+  "Pressure": {
+    def: "Enemy fire weight during an Engagement. Starts at the Sector's Threat Level. Each point imposes -1 ATK. Drops by 1 per point of Momentum gained, by surplus 6s past the Momentum cap on a Success, or through the Flamethrower's own rules. Re-arms to Threat Level each new wave in a Defensive Engagement.",
+    xref: ["ATK", "Momentum", "Flamethrower", "Threat Level", "Reprieve"],
+    chapter: "engagement",
+    anchor: "pressure"
+  },
+  "Reprieve": {
+    def: "A round in a Defensive Engagement after a VICTORY roll fails to break the enemy. No Offense Roll, Defense Roll, or Enemy Tactics; Mobility Checks and Interacts succeed automatically. Momentum resets to CONTESTED and Pressure re-arms to Threat Level.",
+    xref: ["Engagement", "Momentum", "Pressure"],
     chapter: "engagement",
     anchor: "momentum"
   },
@@ -271,13 +412,13 @@ window.GLOSSARY = {
     anchor: "trooper-position"
   },
   "Defensive Position": {
-    def: "A Trooper's ability to survive incoming fire. Three levels: Flanked, In Cover, Fortified. Better position means easier Defense Rolls.",
+    def: "A Trooper's ability to survive incoming fire. Three levels: Flanked, In Cover, Fortified. Better position means an easier Defense Roll.",
     xref: ["Offensive Position", "Flanked", "In Cover", "Fortified"],
     chapter: "engagement",
     anchor: "trooper-position"
   },
   "Limited": {
-    def: "Lowest Offensive Position. The Trooper can Fire but at −1 ATK. Poor angles, obstructed sight lines.",
+    def: "Lowest Offensive Position. The Trooper can Fire but at -1 ATK. Poor angles, obstructed sight lines.",
     xref: ["Offensive Position", "Engaged", "Flanking"],
     chapter: "engagement",
     anchor: "trooper-position"
@@ -288,29 +429,34 @@ window.GLOSSARY = {
     chapter: "engagement",
     anchor: "trooper-position"
   },
-"Flanking": {
-  def: "Best Offensive Position. The Trooper adds their Flanking Bonus ATK when Firing. Limited by Sector Space.",
-  xref: ["Offensive Position", "Flanking Bonus", "Space", "Momentum"],
-  chapter: "engagement",
-  anchor: "trooper-position"
-},
+  "Flanking": {
+    def: "Best Offensive Position. The Trooper adds their Flanking Bonus ATK when Firing. Limited by Sector Space.",
+    xref: ["Offensive Position", "Flanking Bonus", "Space", "Momentum"],
+    chapter: "engagement",
+    anchor: "trooper-position"
+  },
   "Flanked": {
-    def: "Worst Defensive Position. Direct Fire on a roll of 3 or less. Must Fall Back on Momentum Loss or suffer −1 DEF.",
-    xref: ["Defensive Position", "In Cover", "Fortified"],
+    def: "Worst Defensive Position. Direct Fire on a roll of 3 or less. Cannot go Suppressed, and takes -1 DEF next Exchange after a Momentum Loss.",
+    xref: ["Defensive Position", "In Cover", "Fortified", "Suppressed"],
     chapter: "engagement",
     anchor: "trooper-position"
   },
   "In Cover": {
-    def: "Middle Defensive Position. Direct Fire on a roll of 1 only.",
+    def: "Middle Defensive Position. Direct Fire on a roll of 2 or less.",
     xref: ["Defensive Position", "Flanked", "Fortified"],
     chapter: "engagement",
     anchor: "trooper-position"
   },
   "Fortified": {
-    def: "Best Defensive Position. Direct Fire on a roll of 1 only, and a roll of 2 is also Safe. Limited by Sector Cover. Clears Suppressed.",
+    def: "Best Defensive Position. Direct Fire on a roll of 1 only. Limited by Sector Cover. Clears Suppressed, but only after that Exchange's Offense Roll.",
     xref: ["Defensive Position", "In Cover", "Flanked", "Cover", "Suppressed"],
     chapter: "engagement",
     anchor: "trooper-position"
+  },
+  "Exchange": {
+    def: "One round of an Engagement: Intent, Offense Roll, Defense Roll, Momentum, Enemy Tactics.",
+    xref: ["Engagement", "Offense Roll", "Defense Roll"],
+    chapter: "exchange"
   },
   "ATK": {
     def: "Attack dice (d6s) added to the Squad's Offense Roll. Pooled from all Firing Troopers into a single roll.",
@@ -324,24 +470,30 @@ window.GLOSSARY = {
     chapter: "exchange",
     anchor: "atk--def"
   },
+  "Intent": {
+    def: "What every Trooper not Bleeding Out, Stabilized, or Dead decides each Exchange: Fire, Move, Covering Fire, Use Special Gear, Interact, Disengage, or Improvise. Resolved in the order most favorable to the Squad.",
+    xref: ["Fire", "Move", "Covering Fire", "Use Special Gear", "Interact", "Disengage", "Improvise"],
+    chapter: "exchange",
+    anchor: "intent"
+  },
   "Fire": {
-    def: "Intent: contribute ATK to the Offense Roll. The staple action. Flanking Bonus and Ammo can increase ATK. Prevented by Suppressed.",
-    xref: ["ATK", "Offense Roll", "Flanking Bonus", "Suppressed"],
+    def: "Intent: contribute ATK to the Offense Roll. Flanking Bonus and spending Ammo can increase ATK; being Limited reduces it. Prevented by Suppressed. ATK aimed at a Hard Target is set aside in its own pool.",
+    xref: ["ATK", "Offense Roll", "Flanking Bonus", "Suppressed", "Hard Target"],
     chapter: "exchange",
     anchor: "fire"
   },
   "Move": {
-    def: "Intent: reposition on the battlefield via Mobility Check. Move Up (go Flanking), Fall Back (go Fortified), or Reposition (go Engaged/In Cover).",
+    def: "Intent: reposition on the battlefield via a Mobility Check. Move Up (toward Flanking), Fall Back (toward Fortified), or Reposition (toward Engaged and In Cover, +1 ATK on a pass). Cover and Space may prohibit certain moves.",
     xref: ["Mobility Check", "Offensive Position", "Defensive Position"],
     chapter: "exchange",
     anchor: "move"
   },
-"Covering Fire": {
-  def: "Intent: grant +1 DEF to a fellow Trooper. If they Move this Exchange, also grants +1 Mobility for that Move. Stacks with multiple providers.",
-  xref: ["DEF", "Defense Roll", "Move", "Mobility"],
-  chapter: "exchange",
-  anchor: "covering-fire"
-},
+  "Covering Fire": {
+    def: "Intent: grant +1 DEF to a fellow Trooper. If they Move this Exchange, also grants +1 Mobility for that Move. Stacks with multiple providers.",
+    xref: ["DEF", "Defense Roll", "Move", "Mobility"],
+    chapter: "exchange",
+    anchor: "covering-fire"
+  },
   "Use Special Gear": {
     def: "Intent: fire heavy weapons, call in airstrikes, or use other Special Equipment or Special Weapons. Some take a full Exchange.",
     xref: ["Gear"],
@@ -349,14 +501,14 @@ window.GLOSSARY = {
     anchor: "use-special-gear"
   },
   "Interact": {
-    def: "Intent: do something outside the firefight. Stabilize Bleeding Out Troopers, unjam weapons, plant demo charges. Some take multiple Exchanges.",
-    xref: ["Bleeding Out"],
+    def: "Intent: do something outside the firefight. Stabilize a Bleeding Out Trooper, unjam a weapon, plant demo charges. Some take multiple Exchanges.",
+    xref: ["Bleeding Out", "Stabilized"],
     chapter: "exchange",
     anchor: "interact"
   },
   "Disengage": {
-    def: "Intent: the entire Squad retreats. Each Trooper rolls for Injury based on current Momentum. One Trooper may sacrifice themselves to save the rest.",
-    xref: ["Retreat", "Momentum", "Injury"],
+    def: "Intent: the entire Squad retreats. Each Trooper rolls a chance of 1 Injury and a Death Save based on current Momentum (DEFEAT down to CONTESTED). One Trooper may sacrifice themselves so the rest flee uninjured. See Last Stand for the Bleeding Out version.",
+    xref: ["Retreat", "Momentum", "Injury", "Death Save", "Last Stand"],
     chapter: "exchange",
     anchor: "disengage"
   },
@@ -366,89 +518,66 @@ window.GLOSSARY = {
     chapter: "exchange",
     anchor: "improvise"
   },
-"Suppressed": {
-  def: "Chosen instead of Injury on a failed Defense Roll. Flanked Troopers cannot go Suppressed. Limits next Exchange to Move or Interact only. Clears on a passed Defense Roll or becoming Fortified. At TL 3-4, still takes 1 Injury.",
-  xref: ["Defense Roll", "Fire", "Fortified", "Injury", "Flanked"],
-  chapter: "exchange",
-  anchor: "suppressed"
-},
-"Pressure": {
-  def: "Enemy fire weight during an Engagement. Starts equal to the Sector's Threat Level. Each point imposes −1 ATK. Lowered by 1 each time the Squad gains Momentum, by extra 6s on the Offense Roll past the Momentum cap, or by the Flamethrower's unique rules.",
-  xref: ["ATK", "Momentum", "Flamethrower", "Enemy Tactics"],
-  chapter: "exchange",
-  anchor: "pressure"
-},
-"Offense Roll": {
-  def: "Pool all ATK from Firing Troopers, roll d6s, take highest. 6 = Success (+1 Momentum per 6, max +2 this Exchange; extra 6s remove Pressure), 4-5 = Hold or Success at a Cost, ≤3 = Pushed Back.",
-  xref: ["Exchange", "Momentum", "ATK", "Flanking"],
-  chapter: "exchange",
-  anchor: "offense-roll"
-},
+  "Offense Roll": {
+    def: "Pool all ATK from Firing Troopers and roll that many d6s, taking the highest. +1 ATK if Momentum was gained last Exchange, -1 ATK per point of Pressure, ±1 ATK for the Edge. At 0 ATK, roll 2d6 and keep the lowest instead; Success at a Cost isn't available. 6 = Success, 4-5 = Hold Position or Success at a Cost, 3 or less = Pushed Back.",
+    xref: ["Exchange", "Momentum", "ATK", "Pressure", "Edge", "Flanking"],
+    chapter: "exchange",
+    anchor: "offense-roll"
+  },
   "Defense Roll": {
-    def: "Each Trooper rolls DEF d6s and takes highest. Armor modifies result. Outcome depends on Defensive Position.",
-    xref: ["Exchange", "Injury", "Armor", "DEF"],
+    def: "Each Trooper rolls individually against incoming fire. Base 1 DEF, modified by Covering Fire and situational effects. At 1+ DEF roll that many d6 and take the highest; at 0 or less, roll (1 + the negative value) d6 and keep the lowest. Armor modifies the final result: Heavy +1, Light -1.",
+    xref: ["DEF", "Armor", "Covering Fire", "Injury"],
     chapter: "exchange",
     anchor: "defense-roll"
   },
-  "Injury": {
-    def: "Moves the Trooper one step down the Status track. Severity scales with Threat Level.",
-    xref: ["Status", "Trooper"],
+  "Enemy Tactics": {
+    def: "End-of-Exchange check: roll 1d6. Equal to or under the Threat Level, the enemy presses. Roll 1d6 again: 1-3 Push (one Trooper drops a Defensive Position step), 4-5 Press (every Flanking and Engaged Trooper drops a step), 6 Overrun (every Trooper drops a step). A Trooper already Flanked takes -1 DEF instead. The Sergeant can nullify a Tactic for 1 Grit.",
+    xref: ["Exchange", "Threat Level", "Defensive Position", "Sergeant", "Grit"],
     chapter: "exchange",
-    anchor: "injury"
+    anchor: "enemy-tactics"
   },
-"Enemy Tactics": {
-  def: "End-of-Exchange check: roll 1d6. If the result is equal to or under the Sector's Threat Level, the enemy acts. Roll 1d6 again to resolve: 1–3 Push, 4–5 Press, 6 Overrun the Squad's Defensive Positions.",
-  xref: ["Exchange", "Threat Level", "Defensive Position", "Pressure"],
-  chapter: "exchange",
-  anchor: "enemy-tactics"
-},
   "Hard Target": {
-    def: "Tanks, gun nests, brutes. Fired on in a separate dice pool. 6 = Hit, 4–5 = Hit at a Cost.",
-    xref: ["Offense Roll"],
+    def: "Tanks, gun nests, brutes. Fired on in a separate dice pool during the Offense Roll. A 6 deals 1 Hit. A 4-5 deals 1 Hit at a Cost: one Trooper takes -1 DEF, or decline and treat it as a miss.",
+    xref: ["Offense Roll", "Grit"],
     chapter: "hard-targets"
   },
   "Attached Forces": {
-    def: "Additional fighters accompanying the Squad. Add +1/+2/+3 ATK. Committed dice that roll 1 are removed as casualties.",
-    xref: ["Offense Roll", "ATK"],
+    def: "Additional fighters accompanying the Squad, worth +1/+2/+3 ATK by rough size. Don't participate in Contact Rolls. Committed dice roll alongside the Squad's in the Offense Roll; any that come up 1 are removed as casualties. A VIP is always the last die in the group and is killed if that die rolls a 1.",
+    xref: ["Offense Roll", "ATK", "Boon"],
     chapter: "hard-targets",
     anchor: "attached-forces"
   },
-  "Oracle Dice": {
-    def: "Roll 1d6 for a 50/50 question. 2d6 keep lowest for Unlikely, 2d6 keep highest for Likely.",
-    xref: ["Improvise"],
-    chapter: "introduction",
-    anchor: "oracle-dice"
+  "Support": {
+    def: "Firepower called in from beyond the Sector: artillery, naval guns, mine drops, orbital strikes. Drawn from a mission's Support Priority pool and called in through Radio Gear by a Radio Operator.",
+    xref: ["Support Priority", "Requisition"],
+    chapter: "equipment-and-gear",
+    anchor: "support"
+  },
+  "Support Priority": {
+    def: "A pool set during Mission setup alongside Difficulty and Airspace, measuring how much Command cares: 2 for a routine patrol up to 8+ for a set-piece offensive. Shared across the Squad and spent on Support calls for the whole mission.",
+    xref: ["Support", "Difficulty", "Airspace"],
+    chapter: "equipment-and-gear",
+    anchor: "support-priority"
+  },
+  "Bond": {
+    def: "A relationship two Troopers may form after a mission, if the fiction supports it. Once per mission, either bonded Trooper can negate an Injury the other would suffer. If a bonded Trooper dies, the survivor gains +1 ATK to every Offense Roll for the rest of the mission, then rolls to see if they sit out the next one.",
+    xref: ["Injury", "Trooper", "ATK"],
+    chapter: "after-the-mission",
+    anchor: "bond"
   },
   "Field Report": {
     def: "Post-mission narrative exercise. Answer prompts about the mission to turn dice rolls into your regiment's history.",
     xref: ["Mission"],
     chapter: "after-the-mission",
     anchor: "the-field-report"
-  },
-"Tactical Asymmetry": {
-  def: "Persistent ATK modifier set at the start of an Engagement based on terrain advantage. +1 ATK each Exchange if the Squad holds a clear edge (elevation, fortifications), -1 ATK if the enemy does, 0 if neither.",
-  xref: ["Offense Roll", "ATK"],
-  chapter: "engagement",
-  anchor: "tactical-asymmetry"
-},
-"Pressure Overflow": {
-  def: "At TL 3 and TL 4, when Pressure is capped and would increase, the increase instead becomes -1 DEF on a random Trooper for the next Defense Roll.",
-  xref: ["Pressure", "Defense Roll"],
-  chapter: "exchange",
-  anchor: "pressure-overflow"
-},
-"Press the Advance": {
-  def: "After making an Advance Roll, the Squad may spend Grit to boost the result. Each Trooper can contribute 1 Grit for +1, to a maximum of +5.",
-  xref: ["Advance Roll", "Grit"],
-  chapter: "mission-phase",
-  anchor: "press-the-advance"
-}
+  }
 };
 
 // Aliases — alternate forms that map to a canonical glossary key.
 window.GLOSSARY_ALIASES = {
   "troopers": "Trooper",
   "squads": "Squad",
+  "sergeants": "Sergeant",
   "sectors": "Sector",
   "engagements": "Engagement",
   "exchanges": "Exchange",
@@ -456,8 +585,28 @@ window.GLOSSARY_ALIASES = {
   "missions": "Mission",
   "hard targets": "Hard Target",
   "oracle die": "Oracle Dice",
+  "trooper rolls": "Trooper Roll",
+  "squad rolls": "Squad Roll",
   "mobility checks": "Mobility Check",
-  "advance rolls": "Advance Roll",
+  "mobility check": "Mobility Check",
+  "contact roll": "Contact Roll",
+  "contact rolls": "Contact Roll",
+  "threat rolls": "Threat Roll",
+  "advance roll": "Contact Roll",
+  "advance rolls": "Contact Roll",
+  "mission phase": "Advance",
+  "postures": "Posture",
+  "the edge": "Edge",
+  "withdrawals": "Withdrawal",
+  "reprieves": "Reprieve",
+  "intents": "Intent",
+  "death saves": "Death Save",
+  "stabilize": "Stabilized",
+  "stabilizes": "Stabilized",
+  "challenges": "Challenge",
+  "signs": "Sign",
+  "boons": "Boon",
+  "bonds": "Bond",
   "offense rolls": "Offense Roll",
   "defense rolls": "Defense Roll",
   "defense roll": "Defense Roll",
@@ -506,19 +655,15 @@ window.GLOSSARY_ALIASES = {
   "pressure": "Pressure",
   "retreat": "Retreat",
   "retreat!": "Retreat",
-  "ok": "OK",
-  "grazed": "Grazed",
-  "wounded": "Wounded",
-  "bleeding out": "Bleeding Out",
+  "retreats": "Retreat",
   "dead": "Dead",
-  "down": "Down",
+  "bleeding out": "Bleeding Out",
+  "stabilized": "Stabilized",
   "flamethrower": "Flamethrower",
   "limited": "Limited",
   "engaged": "Engaged",
   "flanking": "Flanking",
   "flanked": "Flanked",
   "in cover": "In Cover",
-  "fortified": "Fortified",
-  "press the advance": "Press the Advance",
-"pressure overflow": "Pressure Overflow"
+  "fortified": "Fortified"
 };

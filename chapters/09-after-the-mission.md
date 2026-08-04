@@ -3,20 +3,28 @@
 When the dust settles:
 
 - Surviving Troopers regain all lost [[Grit]], and earn +1 Grit to a maximum of 3.
-- All injuries are treated during recovery — Troopers return to full health.
-- Any Trooper who ended the mission **Wounded**, or who was **Bleeding Out** at any point during this mission, must sit out the next mission to recover properly.
-- The Squad gains **1 Requisition per surviving Trooper**, which can be spent between missions on better gear and equipment.
+- Troopers recover from [[Injury|Injuries]] (see below).
+- The Squad gains **1 [[Requisition]] per surviving Trooper**, which can be spent between missions on better gear and equipment.
+
+## Recovering from Injuries
+
+The degree to which Troopers recover from Injuries during downtime depends on the flavor and tone of your campaign. A few examples are listed below. This is further expanded upon in the *Grand Campaign* section (Commander's Toolkit).
+
+- **Full Recovery.** Surviving a mission means Troopers heal all Injuries and deploy again immediately.
+- **Recovery Rate.** Troopers heal 1d3 Injuries between missions.
+- **Recovery Time.** Troopers heal 1d2 Injuries per week of in-universe time that passes.
+- **Out of Action.** Layer this on top of any option above: Troopers with more than 3 Injuries cannot be redeployed.
 
 ## Bond
 
-After a mission, if the fiction supports it, two Troopers may form a **Bond** — forged through shared fire, risk, and survival.
+After a mission, if the fiction supports it, two Troopers may form a **Bond**, forged through shared fire, risk, and survival.
 
-Once per Mission, if either bonded Trooper would suffer an [[Injury]], they may narrate a moment of instinctive intervention from the other that completely negates the Injury. This is not a transfer — the hit simply never lands. Can only be used once per bonded pair per mission.
+Once per [[Mission]], if either bonded Trooper would suffer an [[Injury]], they may narrate a moment of instinctive intervention from the other that completely negates the Injury. This is not a transfer, the hit simply never lands. Can only be used once per bonded pair per mission.
 
-If a bonded Trooper dies, the survivor gains +1d6 to every Offense Roll they contribute to for the rest of the mission. At mission's end, the Trooper must roll {roll:1d6|Bond}: 
+If a bonded Trooper dies, the survivor gains +1 ATK to every [[Offense Roll]] they contribute to for the rest of the mission. At mission's end, the Trooper must roll {roll:1d6|Bond}: 
 
-- **1–2.** They sit out the next mission, overwhelmed or reassigned.
-- **3–6.** They continue, hardened but focused.
+- **1-2.** They sit out the next mission, overwhelmed or reassigned.
+- **3-6.** They continue, hardened but focused.
 
 ## The Field Report
 

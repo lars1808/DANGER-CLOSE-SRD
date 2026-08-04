@@ -31,35 +31,35 @@ This is not a game for glorifying violence or platforming hateful ideologies. Ke
 
 ## Vibe
 
-> The advance had been clean - three sectors cleared, minor resistance swept aside like debris. Then the bullets started flying in earnest.
+> Three sectors cleared, no casualties. The kind of resistance you walk through.
 >
 > *"Contact front!"*
 >
-> The squad hit the deck. This wasn't patrol work anymore. This was the kind of fire that killed professionals.
+> The squad went flat. The fire out of the ruins was disciplined and overlapping, three positions at least, and it wasn't going to stop on its own.
 >
-> Sergeant weighed the options in the space between muzzle flashes. Flank left through the ruins - risky crossing, good angle. Fall back to better cover - lose ground, keep the squad breathing. Or dig in here and slug it out.
+> The Sergeant had seconds to call it. Left through the rubble: a bad crossing for a good angle. Back to the ditch line: give up ground, keep everyone breathing. Or hold here and win it the hard way.
 >
-> The mission hung on five soldiers and their rifles. On who blinked first.
+> Five rifles. He had until the next burst.
 
-In DANGER CLOSE, you command a [[Squad]] of [[Trooper|Troopers]] as you advance through hostile [[Sector|Sectors]] toward your [[Objective]], fighting deadly [[Engagement|Engagements]] where positioning and firepower determine who controls the battlefield. Afterwards, you write a [[Field Report]], chronicling the events of the mission.
+In DANGER CLOSE, you command a [[Squad]] of [[Trooper|Troopers]] as you advance through hostile [[Sector|Sectors]] toward your [[Objective]], fighting deadly [[Engagement|Engagements]] where positioning and firepower determine who controls the battlefield. Afterwards, you write a [[Field Report]], chronicling the events of the [[Mission|mission]].
 
 DANGER CLOSE is a tactical wargame where the roleplaying emerges from the tactics.
 
-During missions, you play to win. Your troopers might have names, personalities, quirks you assigned before the first shot was fired. When your twitchy rookie fails a Mobility Check and gets pinned while the squad pushes forward, you already know why.
+During missions, you play to win. Your troopers might have names, personalities, quirks you assigned before the first shot was fired. When your twitchy rookie fails a [[Mobility Check]] and gets pinned while the squad pushes forward, you already know why.
 
-But it works the other way too: a trooper you hadn't thought much about keeps surviving impossible odds, and suddenly she's the lucky one, the squad's talisman. You didn't plan that. The dice did.
+But it works the other way too: a Trooper you hadn't thought much about keeps surviving impossible odds, and suddenly she's the lucky one, the Squad's talisman. The dice decided that, not you.
 
 If you've ever played XCOM or a tabletop wargame and found yourself caring about a soldier not because of a cutscene or the established lore but because of what happened to them across six missions, that's the feeling this game is built around.
 
-And when the roleplaying does feature in missions - one trooper laying down their life to give the others a fighting chance - it hits all the harder.
+And when roleplay does surface mid-mission, it's usually a Trooper declaring a [[Last Stand]] to buy the others a way out.
 
-DANGER CLOSE supports a wide spectrum of tones, from heroic cinematic action to bleak boots-in-the-mud realism. The rules stay the same. Your narration defines the experience. The same [[Advance Roll]] can depict elite supersoldiers sweeping enemy lines or exhausted grunts crawling through mud. Both are valid. Shape the tone that suits your mission.
+DANGER CLOSE supports a wide spectrum of tones, from heroic cinematic action to bleak boots-in-the-mud realism. The rules don't change, your narration does. The same [[Contact Roll]] covers elite supersoldiers sweeping enemy lines or exhausted grunts crawling through mud. Pick the tone that suits your mission.
 
 ## Pressure & Pushback
 
 At its core, DANGER CLOSE is a game of pressure and pushback: a tactical tug-of-war across every scale of play.
 
-In the [[Mission Phase]], progress demands constant forward motion, but each new [[Sector]] might contain overwhelming threats that force retreat or hard-fought defense.
+During a [[Mission]],, progress demands constant forward motion, but each new [[Sector]] might contain overwhelming threats that force retreat or hard-fought defense.
 
 Running into heavy opposition then 'zooms in' towards [[Engagement|Engagements]], in which your [[Squad]] must expose themselves to enemy fire in order to gain [[Momentum]] and seize control of a Sector. At the smallest level of detail, we look at the individual actions of [[Trooper|Troopers]] during one round of combat - an [[Exchange]].
 
@@ -67,10 +67,18 @@ And at the largest scale, every Mission contributes to a larger Campaign, where 
 
 | Term       | Scope                                                         | Example Impact                 | Timeframe |
 | ---------- | ------------------------------------------------------------- | ------------------------------ | --------- |
-| Exchange   | One round of combat within an Engagement                      | Individual trooper tactics     | Moments   |
-| Engagement | One firefight to clear a Sector                               | Squad-level positioning        | Hours     |
-| Mission    | An effort to achieve an objective involving multiple Sectors  | Tactical success or failure    | Hours     |
+| [[Exchange]]   | One round of combat within an Engagement                      | Individual trooper tactics     | Moments   |
+| [[Engagement]] | One firefight to clear a Sector                               | Squad-level positioning        | Hours     |
+| [[Mission]]    | An effort to achieve an objective involving multiple Sectors  | Tactical success or failure    | Hours     |
 | Operation  | Multi-mission plan with clear goal and stakes                 | Pivot point within a campaign  | Days      |
+
+## The Enemy
+
+The book never names who you're fighting. No faction, no species, no war aims. That's deliberate. Bring your own: armored fanatics in service to a god-emperor, insectoid raiders in powered shells, a mirror of your own army wearing different colors. The rules don't care what's behind the muzzle flash.
+
+What the rules do assume is how they fight. The enemy shoots back at range, and their fire kills Troopers in cover. They use ground: they hold positions, they occupy Sectors, and they have to be dislodged. They move in squads and fire teams, with leaders and heavy weapons worth singling out. They press when they hold the advantage and give ground when they don't. Anything that fights that way runs on this engine.
+
+An opponent that doesn't hold ground or doesn't shoot needs a reskin first. Arm the horde. Run the thing stalking your Squad as a [[Hard Target]] rather than an enemy force.
 
 ## Getting Ready to Play
 
@@ -86,7 +94,7 @@ A bunch of d6s, pen and paper. Put on a dramatic soundtrack. Video game OSTs wor
 
 Track your squad's story across missions. Squad members, their personalities and relationships, the progress of the larger conflict. As much or as little as you want.
 
-For the missions themselves, I recommend a play sheet: a single page where you track deployed Troopers and their status, the Sector map and its contents, and Momentum and positioning during Exchanges.
+For the missions themselves, I recommend a play sheet: a single page where you track deployed Troopers and their Status, the Sector map and its contents, and [[Momentum]] and positioning during Exchanges.
 
 You can do this with pen and paper or tools such as Excalidraw or Google Slides. There's also a spreadsheet you can copy.
 
@@ -122,6 +130,8 @@ Use Oracle Dice to resolve uncertain elements during missions: Is the bridge sti
 
 DANGER CLOSE runs on a core engine of squad-based combat, and its structure is deliberate, and by default quite guided. However, as with any TTRPG (especially solo ones!), you are always free to try your own approaches. 
 
+### Trooper Roll
+
 The [[Oracle Dice]] mentioned on the previous page work great for that, as does the following method: 
 
 **Time, Context, Skill** (an adaption of the *Time, Gear Skill* framework found in [Block, Dodge, Parry](https://dicegoblingames.itch.io/block-dodge-parry)). 
@@ -130,7 +140,7 @@ To resolve a task, ask three questions:
 
 - **Time**. Can the Trooper work the problem without time pressure?
 - **Context**. Does the situation favor the Trooper? Good vantage point, a damaged lock, locals think favorably of the Troopers. The opposite also applies; are there conditions that make it harder? Settle on an overall ‘yes’ or ‘no’.
-- **Skill**. Do the Trooper’s [[Tags]] apply? A Forceful Trooper breaking through a barricade, a Technical Trooper splicing a comm relay, a Steady Trooper keeping watch for hours, a Sharp Trooper reading a prisoner's body language. Interpret broadly: would this type of person approach the problem with confidence? 
+- **Skill**. Does the Trooper’s [[Tag]] apply? A Forceful Trooper breaking through a barricade, a Technical Trooper splicing a comm relay, a Steady Trooper keeping watch for hours, a Sharp Trooper reading a prisoner's body language. Interpret broadly: would this type of person approach the problem with confidence? 
 
 Count the yeses. 
 
@@ -138,3 +148,21 @@ Count the yeses.
 - **2x ‘Yes’**: Roll the [[Oracle Die|Oracle Dice]] {roll:1d6|Oracle}. The missing element is what's at stake if the roll goes badly. Missing Time means the task takes too long and the situation changes. Missing Context means the environment punishes the attempt. Missing Skill means the Trooper botches it and creates a new problem.
 - **1x or no ‘Yes’**: It's not happening. Find another way.
 
+### Squad Roll
+
+The Squad Roll asks whether the Squad's coordinated effort resolves a scene. Use it for scenes where the Squad is weapons-ready but not yet shooting: patrols, cordons, standoffs, crowd control, searches, escorts, defensive lines under harassment.
+
+To resolve a scene the Squad is attempting as a unit, ask four questions:
+
+- **Time.** Is there a beat in which the Squad can relay orders and choose when to act?
+- **Ground.** Does the terrain favor the Squad? Cover, sightlines, prepared positions, familiar ground.
+- **Read.** Is there a clear foe? Someone the Squad can identify and act against with doctrine. Ambiguity is what makes scenes hard.
+- **Kit.** Does the Squad have specific gear well-suited to this scene? A bullhorn for crowd work, NVGs at night, an interpreter for a parley. Standard loadout doesn't count.
+
+Roll **1d6 by default**, plus **1d6 for each 'yes'**. Take the highest die.
+
+- **6:** The scene resolves in the Squad's favor. Best possible outcome under the circumstances.
+- **4-5:** The Squad gets what they want, but at a cost.
+- **1-3:** The Squad loses control. They don't get what they want, and the scene escalates.
+
+The nature of the cost on a 4-5, and the shape of the escalation on a 1-3, depend on the fiction. Burned [[Ammo]], an [[Injury|Injured]] Trooper, or lost tempo on a mixed result. On a bad result, an [[Engagement]] might begin, the [[Objective|objective]] might be lost, or the Squad might be forced into a worse position for whatever comes next.

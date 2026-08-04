@@ -4,9 +4,7 @@ An **Engagement** is a zoomed-in firefight: the squad locked in a battle that wi
 
 ## Momentum
 
-Momentum shows whether the Squad is winning or losing. It represents control of the battlefield, not necessarily literal meters gained. The Squad wins by driving Momentum high enough to rout the enemy, or loses if it falls too low.
-
-"+1 Momentum" means improving Momentum by 1 step (for example, from FALTERING to LOSING GROUND).
+Momentum shows whether the Squad is winning or losing. It represents control of the battlefield, not necessarily literal meters gained. The Squad wins by driving Momentum high enough to rout the enemy, or loses if it falls too low. "+1 Momentum" means improving Momentum by 1 step, for example from FALTERING to LOSING GROUND.
 
 | Momentum            | Description                                                        |
 | ------------------- | ------------------------------------------------------------------ |
@@ -18,77 +16,60 @@ Momentum shows whether the Squad is winning or losing. It represents control of 
 | **BREAKING THROUGH**| One more push and the enemy breaks.                                |
 | **VICTORY**         | The enemy is routed and/or destroyed.                              |
 
-## Momentum & Defense
+**Defensive Engagements** (such as sieges or extractions) add two rules on top of standard Momentum:
 
-Engagements that revolve around defense follow normal Engagement/Momentum rules, with two additions: DEFEAT consequences and VICTORY Reprieve rounds.
+- **DEFEAT.** The Squad retreats to an adjacent Sector, or is trapped if none is available or this is an Extraction. Each Trooper takes 1 [[Injury]] per Exchange spent at DEFEAT.
+- **VICTORY.** Roll {roll:1d6} (+1 for each previous VICTORY this Engagement). If the result exceeds the [[Threat Level]], the enemy breaks and the Engagement ends. Otherwise the Squad gains a round of Reprieve: no immediate foes to attack or be attacked by (so no Offense or [[Defense Roll]]), and Momentum resets to CONTESTED, and Pressure returns to TL as the fight continues.
 
-- **DEFEAT**: If Momentum reaches DEFEAT, the Squad retreats to an adjacent Sector. If no Sector is available, or if this is an Extraction, the Squad is trapped. Each Trooper takes 1 Injury for every Exchange spent at DEFEAT.
-- **VICTORY**: If Momentum reaches VICTORY, roll {roll:1d6}. If the result is over the [[Threat Level]], the enemy breaks and the Engagement ends. Add +1 for each previous VICTORY reached during this Engagement. If the enemy does not break, the Squad gains a round of Reprieve. No Defense Roll is made during this round. Momentum then resets to CONTESTED and the fight continues.
+**Sieges** last until the enemy breaks. **Extractions** last until the enemy breaks or the exfil arrives: the timer is set before the Engagement begins, 6 (quick) to 9 (long) Exchanges, Reprieve exchanges included. When the timer expires, the Squad extracts as per the [[Disengage]] intent.
 
-**Sieges** last until the enemy breaks.
-
-**Extractions** last until the enemy breaks, or the exfil arrives. The exfil timer is set before the Engagement begins, ranging from 6 (quick) to 9 (long) Exchanges. Reprieve exchanges count as well. When the timer 
-expires, the Squad extracts as per the Disengage intent.
-
-### Pressure
+## Pressure
 
 First contact is the worst of it. The enemy is set, sighted, and firing before the Squad can answer. That weight of fire is **Pressure**, and it only eases once the Squad takes the initiative.
 
-Pressure starts at [[TL]]. Each point imposes **-1 ATK**, removed from the Squad's total pool before dice are allocated to targets.
+Pressure starts at [[Threat Level|TL]]. Each point imposes **-1 ATK**, removed from the Squad's total pool before dice are allocated to targets.
 
 - When the Squad gains [[Momentum]], Pressure drops by 1.
 - Surplus 6s on a [[Offense Roll|Success]] can strip Pressure (see [[Offense Roll]]).
 - The [[Flamethrower]] lowers Pressure through its own rules. It is the only weapon that can.
 - Pressure never falls below 0 or rises above its starting value.
-- **Defensive Engagements**: each new wave re-arms Pressure to [[TL]]. Hold the line and the weight comes back with every assault.
+- **Defensive Engagements**: each new wave (after a Reprieve) re-arms Pressure to TL.
 
-Momentum says who is winning. Pressure says how hard the enemy is firing. The first you fight over. The second you grind down.
+### Edge
 
-## Trooper position
+**[[Edge]]** carries over from the [[Advance]] or [[Retreat]] that opened this Engagement: ±1 ATK each Exchange, on top of Pressure, holding until conditions change.
 
-Each Trooper balances their **Offensive Position** (ability to attack) and **Defensive Position** (ability to survive). Better angles of fire often mean less cover; safer positions often limit impact.
+## Trooper Position
 
-A better Offensive Position adds more dice to the squad's attack; a stronger Defensive Position makes it harder for enemies to land hits.
+Each Trooper holds an **Offensive Position** (ability to attack) and a **Defensive Position** (ability to survive). A better Offensive Position adds more dice to the squad's attack; a stronger Defensive Position makes it harder for enemies to land hits. The two pull against each other: better angles of fire usually mean less cover.
 
-Every round is a tug-of-war: do you risk exposure to build more firepower, or hunker down and hope your squad mates push Momentum forward without you?
+Position is an abstraction, not a location. It covers everything from kneeling behind a low wall instead of standing exposed, to sprinting fifty meters into the open. What matters is the state a Trooper is in, not the ground they are standing on. Troopers try to move into advantageous positions; shifts in the battle also shift position involuntarily.
 
 > [!example] In play
 > - **Trooper A** is currently **Engaged and Flanked**. *"Trooper A has been raining lead on the enemy - but a few hostiles have circled around, now threatening Trooper A's position."*
 > - **Trooper B** is currently **Limited and Fortified**. *"Trooper B took a serious hit a few Exchanges back - and spent the last Exchange haulin' ass, throwing himself behind a barricade. He can't really fire effectively from here - but at least he's safe."*
 > - **Trooper C** is currently **Flanking and In Cover**. *"Trooper C has the high ground - clear line-of-sight against whole groups of enemies from solid cover."*
 
-Since each Trooper always has an Offensive and Defensive Position, we can envision it as 2 axes, creating a 3×3 grid.
+Offensive and Defensive Position form two axes: sketch them as a 3×3 grid to track five Troopers at once, on paper or in a VTT. This is not the game board of DANGER CLOSE, only a way to hold state in view.
 
-This grid is not the 'game board' of DANGER CLOSE - it is simply a way to visualize the Offensive- and Defensive Position of 5 Troopers at the same time. Sketch it out on paper and use tokens, or use it in a VTT to easily track Troopers during an Engagement.
-
-A Trooper's Offensive- and Defensive Position are **abstractions**. Simply put, they are the dials of risk and reward. Troopers will be trying to move into advantageous positions, while shifts in the battle will also shift their position involuntarily.
-
-In fiction, moving position from Engaged to Flanking can be as simple as "jump over the barricade you've been using as cover to really hose lead on a cluster of foes". Switching from Engaged to Limited but becoming Fortified in the process might be something as simple as "diving face-first behind a pile of rubble"; you're unable to fire back effectively (for the time being), but you are safe.
+In fiction, moving from Engaged to Flanking can be as simple as jumping a barricade to hose a cluster of foes. Moving from Engaged to Limited but becoming Fortified might be diving face-first behind a pile of rubble: unable to fire back effectively, but safe.
 
 ## Sector Cover & Space
 
-The Sector's [[Cover]] value (as set when initially creating the Sector) determines how many Troopers can be **Fortified** during this Engagement:
+The Sector's [[Cover]] sets how many Troopers can be **[[Fortified]]** this Engagement. The number is fixed when the Sector is generated and carried in its notation.
 
-| Cover       | Defensive Position Effects                      |
-| ----------- | ----------------------------------------------- |
-| 0 - Exposed | Never Fortified.                                |
-| 1 - Normal  | 1d4 Troopers can be Fortified*.                 |
-| 2 - Dense   | No limit on how many Troopers can be Fortified. |
+| Cover   | Defensive Position Effect                                 |
+| ------- | --------------------------------------------------------- |
+| Exposed | Never Fortified.                                          |
+| Normal  | 1 to 4 Troopers can be Fortified, set at Sector creation. |
+| Dense   | Up to 5 Troopers can be Fortified.                        |
 
-Similarly, the Sector's [[Space]] value determines the space Troopers have for offensive maneuvers, in the form of how many can **Flank** at the same time:
+[[Space]] works the same way for **[[Flanking]]**.
 
-| Space           | Offensive Position Effects                           |
-| --------------- | ---------------------------------------------------- |
-| 0 - Tight       | Never Flanking.                                      |
-| 1 - Transitional | 1d4 Troopers can be Flanking. |
-| 2 - Open        | No limit on how many Troopers can be Flanking.       |
+| Space        | Offensive Position Effect                                |
+| ------------ | -------------------------------------------------------- |
+| Tight        | Never Flanking.                                          |
+| Transitional | 1 to 4 Troopers can be Flanking, set at Sector creation. |
+| Open         | Up to 5 Troopers can be Flanking.                        |
 
-*Roll 1d4 to determine Cover and/or Space slots when the Squad first enters this Sector, and note it down in case the Sector gets revisited.
-
-## Tactical Asymmetry
-
-At the start of the Engagement, check the terrain for tactical asymmetry:
-
-- **+1 ATK each Exchange** if the Squad holds a clear advantage the enemy doesn't share: elevation, more cover than the enemy, fortifications, better sightlines.
-- **-1 ATK each Exchange** if the enemy holds that advantage and it can't be easily overcome (entrenched positions, high ground, fighting uphill into prepared defenses).
-- **No modifier** if neither side has a clear edge, or both stumbled into the fight on equal ground.
+If there are not enough slots for every Trooper who could Flank or be Fortified, choose who fills them.
