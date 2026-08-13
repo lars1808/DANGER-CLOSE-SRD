@@ -220,8 +220,8 @@ At the end of the Exchange, after the Defense Rolls, resolve the shift in **[[Mo
 ### Momentum Gain
 
 - [[Pressure]] drops by 1 per point of Momentum gained (see [[Engagement]]).
-- [[Flanking]] Troopers are exposed by their own push: **-1 DEF** next Exchange.
-- [[Fortified]] Troopers have outrun their angles: **-1 ATK** next Exchange.
+- [[Flanking]] Troopers outrun their cover: drop one step of **Defensive Position**.
+- [[Fortified]] Troopers outrun their angles: **-1 ATK** next Exchange.
 
 ### Momentum Loss
 
@@ -236,8 +236,6 @@ The enemy doesn't wait for an opening. When the Squad slows, they push, and the 
 | 1-3  | **Push.** One Trooper of your choice drops one step of [[Defensive Position]]. |
 | 4-5  | **Press.** Every [[Flanking]] and [[Engaged]] Trooper drops one step of Defensive Position. |
 | 6    | **Overrun.** Every Trooper drops one step of Defensive Position. |
-
-If a Trooper is already at Flanked and still drops a step in Defensive Position, they get -1 DEF instead.
 
 Your Squad's **[[Sergeant]]**, if Fighting and not Suppressed, can nullify a Tactic at the cost of 1 Grit.
 

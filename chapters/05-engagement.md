@@ -45,6 +45,8 @@ Each Trooper holds an **Offensive Position** (ability to attack) and a **Defensi
 
 Position is an abstraction, not a location. It covers everything from kneeling behind a low wall instead of standing exposed, to sprinting fifty meters into the open. What matters is the state a Trooper is in, not the ground they are standing on. Troopers try to move into advantageous positions; shifts in the battle also shift position involuntarily.
 
+**Flanked is the floor.** A Trooper at Flanked who drops another step of Defensive Position takes **-1 DEF** on their next Defense Roll instead.
+
 > [!example] In play
 > - **Trooper A** is currently **Engaged and Flanked**. *"Trooper A has been raining lead on the enemy - but a few hostiles have circled around, now threatening Trooper A's position."*
 > - **Trooper B** is currently **Limited and Fortified**. *"Trooper B took a serious hit a few Exchanges back - and spent the last Exchange haulin' ass, throwing himself behind a barricade. He can't really fire effectively from here - but at least he's safe."*
