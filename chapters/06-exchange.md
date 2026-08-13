@@ -96,7 +96,6 @@ The battlefield is not a blank grid. If the fiction says there's a fuel line, a 
 
 Pool all ATK from the Squad and roll that many d6s. Take the highest value.
 
-- Add **+1 ATK** if Momentum was gained last Exchange.
 - Subtract **-1 ATK** per point of current **[[Pressure]]**.
 - Add or subtract **1 ATK** for the **[[Edge]]**, if any.
 - If the pool is 0 ATK, roll {roll:2d6kl1} and take the lowest. Success at a Cost is not available at 0 ATK.

@@ -122,7 +122,7 @@ A **[[Suppressed]]** Trooper can only Move or Interact.
 
 ### 2. Offense Roll
 
-Pool all ATK, roll, take the highest. **+1** if Momentum was gained last Exchange. **-1** per point of Pressure. **±1** for the Edge. At 0 ATK, roll 2d6 keep lowest; no Success at a Cost.
+Pool all ATK, roll, take the highest. **-1** per point of Pressure. **±1** for the Edge. At 0 ATK, roll 2d6 keep lowest; no Success at a Cost.
 
 | Result | Outcome                                                      |
 | ------ | ------------------------------------------------------------ |
@@ -164,7 +164,7 @@ Add Injuries to the tally, then roll a **Death Save**: 1d6, greater than the tal
 
 ### 4. Momentum Gain & Loss
 
-- **On gain.** Pressure -1 per point. Flanking Troopers -1 DEF next Exchange. Fortified Troopers -1 ATK next Exchange.
+- **On gain.** Pressure -1 per point. Flanking Troopers degrade Defensive Position. Fortified Troopers -1 ATK next Exchange.
 - **On loss.** Flanked Troopers -1 DEF next Exchange.
 
 ### 5. Enemy Tactics
