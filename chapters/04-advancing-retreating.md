@@ -56,7 +56,7 @@ Make a **Contact Roll** (1d6), apply the [[Edge]] if one is in play, then read t
 | 1    | AMBUSHED | AMBUSHED      | AMBUSHED |
 | 2    | SPOTTED  | AMBUSHED      | SPOTTED  |
 | 3    | SPOTTED  | AMBUSHED      | SPOTTED  |
-| 4    | SPOTTED  | SURPRISE      | SPOTTED  |
+| 4    | SPOTTED  | SPOTTED       | SPOTTED  |
 | 5    | SPOTTED  | SURPRISE      | SURPRISE |
 | 6    | SURPRISE | **OVERWHELM** | SURPRISE |
 
@@ -72,7 +72,7 @@ Alongside the [[Contact Roll]], make a **Threat Roll** (1d6). If the Threat Roll
 
 > Having performed 4 Contact Rolls, Alpha Squad makes a Threat Roll: 1d6-1. If lower or equal to the TL of the upcoming Engagement, their Contact Roll result worsens.
 
-**Pour It On.** After the Contact Roll and Threat Roll are resolved, a Squad performing an [[Assault Posture|Assault]] may spend additional [[Ammo]] to raise the final result of the Contact Roll: 2 Ammo per +1. Declare and spend together; the new result is final.
+**Pour It On.** After the Contact Roll and Threat Roll are resolved, a Squad performing an [[Assault Posture|Assault]] may spend additional [[Ammo]] to raise the final result of the Contact Roll: 2 Ammo per +1. The roof here is 5 - SURPRISE. OVERWHELM cannot be reached this way.
 
 ### Positions and Momentum
 
