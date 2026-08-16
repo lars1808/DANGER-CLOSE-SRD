@@ -4,16 +4,19 @@ An optional method to further raise the stakes is by introducing **Hard Targets*
 
 Hard Targets must be targeted separately during the [[Fire]] action. Some equipment, such as rocket launchers, provide a clear and distinct advantage against Hard Targets.
 
-When Firing upon a Hard Target, set those d6 aside in a separate pool and roll them individually during the [[Offense Roll]]. 
+When Firing upon a Hard Target, set those d6 aside in a separate pool and roll them individually **before** the [[Offense Roll]]. 
 
-- A **6** deals 1 Hit. 
-- A **4-5** deals 1 Hit at a Cost: one Trooper takes **-1 DEF** during the [[Defense Roll]]. You can decline the cost and treat it as a miss.
+Momentum cannot pass BREAKING THROUGH while a Hard Target holds the field. Momentum gain still applies up to that point and its other effects resolve as normal: Pressure drops, positioning shifts, 6s beyond the cap remove Pressure or grant Grit. The Engagement does not end. Allocate accordingly.
+
+- A **4-6** deals 1 Hit. 
+- A **2-3** deals 1 Hit at a Cost: one Trooper takes **-1 DEF** during the [[Defense Roll]]. You can decline the cost and treat it as a miss.
+- A **1** does not deal damage.
 
 Interpret/reflavor Hard Targets at will; a Brute can be a bipedal armored walker, a hulking monstrosity, or just a very big guy with a very big gun.
 
 | Name      | Hit Points | Damage                 | Notes                                                        |
 | --------- | ---------- | ---------------------- | ------------------------------------------------------------ |
-| Brute     | 1          | -1 DEF to 2 Troopers   | -                                                            |
+| Brute     | 2          | -1 DEF to 2 Troopers   | -                                                            |
 | Sniper    | 1          | -2 DEF to 1 Trooper    | Prefers [[Flanked]] targets.                                 |
 | Grenadier | 1          | -2 DEF to 1 Trooper    | Prefers [[Fortified]] targets.                               |
 | Gun Nest  | 2          | -1 DEF to 1 Trooper    | Prefers [[Flanking]] targets.                                |

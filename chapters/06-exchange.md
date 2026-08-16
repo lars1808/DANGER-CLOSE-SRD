@@ -30,7 +30,7 @@ Firing is the staple action. Each **[[ATK]]** increases the odds of gaining **[[
 
 A Trooper's **[[Flanking Bonus]]** is determined by their [[Mobility]]: +1 by default, +2 if Mobility ≥ 4, +3 if Mobility ≥ 5.
 
-Being **[[Suppressed]]** prevents a Trooper from firing. If firing at a [[Hard Target]], set those ATK aside - they are tracked and rolled separately.
+Being **[[Suppressed]]** prevents a Trooper from firing. If firing at a [[Hard Target]], set those ATK aside - they are tracked and rolled separately. Always resolve Hard Targets before the general Offense Roll.
 
 | Factor           | Impact     |
 | ---------------- | ---------- |
@@ -126,7 +126,11 @@ If this Momentum gain pushes Momentum to VICTORY, make one final **[[Defense Rol
 
 Gain +1 Momentum per 6 rolled, to a maximum of +2 Momentum this Exchange. Each 6 rolled beyond the cap *either* removes **1 Pressure** *or* grants +1 [[Grit]] to a Trooper of choice.
 
-If this Momentum gain pushes Momentum to VICTORY, the Engagement is won. If you obtain a Success you can also opt to **Hold Position** instead (each Trooper +1 DEF), as that might be beneficial during defense or extraction missions.
+If this Momentum gain pushes Momentum to VICTORY, the Engagement is won and instantly ends (unless a Hard Target is still present, see below). 
+
+If you obtain a Success you can also opt to **Hold Position** instead (each Trooper +1 DEF), as that might be beneficial during defense or extraction missions.
+
+Momentum cannot pass BREAKING THROUGH while a **Hard Target** holds the field. Momentum gain still applies up to that point and its other effects resolve as normal: Pressure drops, positioning shifts, 6s beyond the cap remove Pressure or grant Grit. The Engagement does not end. Allocate accordingly.
 
 If after the Offense Roll, Momentum is not at DEFEAT or VICTORY, the fight continues. The other effects of Momentum gain/loss are resolved after the Defense Roll.
 
@@ -201,7 +205,7 @@ A **Bleeding Out** Trooper cannot take actions, and dies at the end of the next 
 
 A Bleeding Out Trooper can go out fighting instead of waiting for help. Declare it the moment it happens. They die after performing their action. Choose one:
 
-- **+4 ATK** to this Exchange's Offense Roll. Go out in a blaze of glory.
+- **+4 ATK** to the next Offense Roll. Go out in a blaze of glory.
 - The Squad immediately **Disengages**, no Injury rolls for anyone. If some Troopers already failed their Injury roll in this Disengage before the Last Stand was declared, they're spared too. The Trooper's death guarantees a safe retreat for the others.
 
 ### Death
