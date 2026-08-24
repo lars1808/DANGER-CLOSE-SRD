@@ -94,35 +94,32 @@ The battlefield is not a blank grid. If the fiction says there's a fuel line, a 
 
 ## Offense Roll
 
-Pool all ATK from the Squad and roll that many d6s. Take the highest value.
+Pool all ATK from the Squad and roll that many d6s. **Take the highest value**. Choose any outcome whose required result is equal to or lower than your highest die.
 
 - Subtract **-1 ATK** per point of current **[[Pressure]]**.
 - Add or subtract **1 ATK** for the **[[Edge]]**, if any.
 - If the pool is 0 ATK, roll {roll:2d6kl1} and take the lowest. Success at a Cost is not available at 0 ATK.
 
-| Offense Roll Result | Outcome                                    |
-| ------------------- | ------------------------------------------ |
-| ≤ 3                 | **Pushed Back**                            |
-| 4–5                 | **Hold Position** OR **Success at a Cost** |
-| 6                   | **Success**                                |
+| Offense Roll Result | Outcome              |
+| ------------------- | -------------------- |
+| ≤ 3                 | **Pushed Back**      |
+| 4                   | **Regroup**          |
+| 5                   | **Fight Through**    |
+| 6                   | **Seize Initiative** |
 
 ### Pushed Back
 
-Lose -1 Momentum. If Momentum reaches DEFEAT, the Squad is routed, as per the Disengage intent.
+Momentum -1. Pressure +1. If Momentum reaches DEFEAT, the Squad is routed, as per the Disengage intent.
 
-### Hold Position
+### Regroup
 
-Each Trooper gains +1 DEF this Exchange. No Momentum change.
+Momentum -1. Clear **Suppressed** from all Troopers. Any Trooper may immediately set their Position to **Engaged / In Cover**. 
 
-### Success at a Cost
+### Fight Through
 
-Gain +1 Momentum. -1 DEF for the most at-risk Trooper (most Injuries in the worst [[Defensive Position]]).
+Momentum +1. Choose one Trooper involved in the push. They suffer the normal Injuries for the Threat Level and make a **Death Save**. If this reaches VICTORY, every Trooper makes one final Defense Roll before the enemy breaks; they cannot become Suppressed during this roll.
 
-If this applies to multiple Troopers, pick one at random. This Trooper also takes +1 [[Injury]] if hit.
-
-If this Momentum gain pushes Momentum to VICTORY, make one final **[[Defense Roll]]** for all Troopers, in which it's not possible to go **[[Suppressed]]**.
-
-### Success
+### Seize Initiative
 
 Gain +1 Momentum per 6 rolled, to a maximum of +2 Momentum this Exchange. Each 6 rolled beyond the cap *either* removes **1 Pressure** *or* grants +1 [[Grit]] to a Trooper of choice.
 
@@ -199,7 +196,7 @@ A Suppressed Trooper is hugging dirt. Next Exchange, they can only **[[Move]]** 
 
 A **Bleeding Out** Trooper cannot take actions, and dies at the end of the next Exchange unless Stabilized.
 
-**Stabilize** is an Interact Intent option, and costs a full Exchange for the Trooper that provides aid, and always succeeds. A **Stabilized** Trooper is out of the fight but out of danger: they take no actions and are not targeted by normal enemy fire. When the Engagement ends, they return to the fight, keeping their Injuries.
+Stabilize is an Interact Intent option and costs a full Exchange for the Trooper providing aid. The wounded Trooper makes one final Death Save. On a success, they are Stabilized; on a failure, they die. A **Stabilized** Trooper is out of the fight but out of danger: they take no actions and are not targeted by normal enemy fire. When the Engagement ends, they return to the fight, keeping their Injuries.
 
 ### Last Stand
 
@@ -222,25 +219,41 @@ At the end of the Exchange, after the Defense Rolls, resolve the shift in **[[Mo
 
 ### Momentum Gain
 
-- [[Pressure]] drops by 1 per point of Momentum gained (see [[Engagement]]).
+- [[Pressure]] drops by 1 per point of Momentum gained.
 - [[Flanking]] Troopers outrun their cover: drop one step of **Defensive Position**.
 - [[Fortified]] Troopers outrun their angles: **-1 ATK** next Exchange.
 
 ### Momentum Loss
 
+- [[Pressure ]]increases by 1 if Pushed Back.
 - [[Flanked]] Troopers find the enemy closing on them: **-1 DEF** next Exchange.
 
 ## Enemy Tactics
 
-The enemy doesn't wait for an opening. When the Squad slows, they push, and the harder the sector, the more often they do. At the end of an Exchange, roll {roll:1d6}. On a roll equal to or under [[Threat Level|TL]], the enemy presses. Roll {roll:1d6} again:
+The enemy keeps probing for a weakness, shifting fire toward Troopers who expose themselves or threaten its position. At the end of each Exchange, roll {roll:1d6}. If the result is equal to or lower than **TL**, **Enemy Tactics trigger**.
 
-| 1d6  | Effect                                                       |
-| ---- | ------------------------------------------------------------ |
-| 1-3  | **Push.** One Trooper of your choice drops one step of [[Defensive Position]]. |
-| 4-5  | **Press.** Every [[Flanking]] and [[Engaged]] Trooper drops one step of Defensive Position. |
-| 6    | **Overrun.** Every Trooper drops one step of Defensive Position. |
+When Enemy Tactics trigger, determine the enemy’s Focus: which Trooper draws their attention, and how they respond to that Trooper’s current position.
 
-Your Squad's **[[Sergeant]]**, if Fighting and not Suppressed, can nullify a Tactic at the cost of 1 Grit.
+**Roll among active Troopers.** Number them and roll a die, rerolling results outside the range. If the selected Trooper is **Fortified** or **Limited**, reroll once, unless they are also **Flanking** or **Flanked**. Keep the second result.
+
+At BREAKING THROUGH, determine Focus twice, rerolling duplicate Troopers. Resolve a response against each.
+
+The enemy’s response is determined by the position of the Trooper in focus. Pick the first that applies, reading top to bottom.
+
+| Target        | Enemy response | Positional concession                                     |
+| ------------- | -------------- | --------------------------------------------------------- |
+| **Flanked**   | **Exploit**    | Degrade Offensive Position and improve Defensive Position |
+| **Flanking**  | **Drive Off**  | Degrade Offensive Position                                |
+| **Fortified** | **Flush Out**  | Degrade Defensive Position                                |
+| **Baseline**  | **Pin**        | Degrade Offensive Position                                |
+
+When a Trooper is **Focused**, choose:
+
+- Take the listed positional concession OR
+- Become Suppressed (if not already Suppressed) OR
+- Take 1 non-lethal Injury
+
+Your Squad's **Sergeant**, if Fighting and not Suppressed, can nullify **one enemy response** at the cost of 1 Grit. They use tactical insight, coordination and communication to anticipate and negate the enemy's efforts.
 
 ## The End of the Engagement
 
@@ -250,8 +263,6 @@ The steps that make up an Exchange (Intent, Offense Roll, Defense Roll, Momentum
 - The Squad reaches **DEFEAT**, and is forced to retreat. Use the Disengage intent, and the *Retreat!* section in *Advancing & Retreating*.
 - The Squad chooses to disengage, and chooses to retreat. Use the Disengage intent, and the *Retreat!* section in *Advancing & Retreating*.
 - The Squad is entirely wiped out.
-
-When the Engagement ends, each surviving Trooper removes 1 Injury. Recovery comes from finishing fights, not from walking quiet ground: a Squad cannot clear Injuries by pacing between empty Sectors. Beyond this, recovery runs through Medic Gear.
 
 ## After-Action Report
 

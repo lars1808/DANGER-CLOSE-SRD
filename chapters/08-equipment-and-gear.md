@@ -183,6 +183,14 @@ Once per Engagement, the Trooper can instantly shift to an [[Offensive Position|
 
 Add +1 to each [[Contact Roll]]. Does not stack with multiple Drone Gear.
 
+### Ballistic Shield
+
+`REQ: 1 // Mobility: -2`
+
+*Full-body ballistic shield. Heavy, slow, and the only thing between the Squad and open ground.*
+
+A Trooper can use their Intent to **Raise Shield.** Defensive Position becomes Fortified, ignoring Cover limits. Opens one additional Fortified slot this Exchange for another Trooper to Move into. Can be used while Suppressed. Can be held multiple Exchanges.
+
 ### Medic Gear 
 
 `REQ: 0 // Mobility: -1`
